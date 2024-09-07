@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.MSlistarArtículos = new System.Windows.Forms.ToolStripMenuItem();
-            this.porMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.porCategoríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LBLbusqueda = new System.Windows.Forms.Label();
             this.TXTbuscar = new System.Windows.Forms.TextBox();
             this.CMBbusqueda = new System.Windows.Forms.ComboBox();
@@ -64,44 +60,20 @@
             this.TXBdescripcion = new System.Windows.Forms.TextBox();
             this.LBLcargarImagen = new System.Windows.Forms.Label();
             this.TXBcargarImagen = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
+            this.modificarArtículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSlistarArtículos = new System.Windows.Forms.ToolStripMenuItem();
+            this.porMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porCategoríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.BTNdetalle = new System.Windows.Forms.Button();
             this.GBXbuscar.SuspendLayout();
             this.GBXagregar.SuspendLayout();
             this.PBXeliminar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MSlistarArtículos});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(595, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // MSlistarArtículos
-            // 
-            this.MSlistarArtículos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.porMarcaToolStripMenuItem,
-            this.porCategoríaToolStripMenuItem});
-            this.MSlistarArtículos.Name = "MSlistarArtículos";
-            this.MSlistarArtículos.Size = new System.Drawing.Size(95, 20);
-            this.MSlistarArtículos.Text = "Listar artículos";
-            // 
-            // porMarcaToolStripMenuItem
-            // 
-            this.porMarcaToolStripMenuItem.Name = "porMarcaToolStripMenuItem";
-            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.porMarcaToolStripMenuItem.Text = "Por marca";
-            // 
-            // porCategoríaToolStripMenuItem
-            // 
-            this.porCategoríaToolStripMenuItem.Name = "porCategoríaToolStripMenuItem";
-            this.porCategoríaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.porCategoríaToolStripMenuItem.Text = "Por categoría";
             // 
             // LBLbusqueda
             // 
@@ -132,7 +104,7 @@
             // 
             // BTNbuscar
             // 
-            this.BTNbuscar.Location = new System.Drawing.Point(95, 81);
+            this.BTNbuscar.Location = new System.Drawing.Point(40, 81);
             this.BTNbuscar.Name = "BTNbuscar";
             this.BTNbuscar.Size = new System.Drawing.Size(75, 23);
             this.BTNbuscar.TabIndex = 4;
@@ -142,6 +114,7 @@
             // GBXbuscar
             // 
             this.GBXbuscar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.GBXbuscar.Controls.Add(this.BTNdetalle);
             this.GBXbuscar.Controls.Add(this.LBLbusqueda);
             this.GBXbuscar.Controls.Add(this.BTNbuscar);
             this.GBXbuscar.Controls.Add(this.TXTbuscar);
@@ -173,9 +146,9 @@
             this.GBXagregar.Controls.Add(this.LBLdescripcion);
             this.GBXagregar.Controls.Add(this.LBLnombre);
             this.GBXagregar.Controls.Add(this.LBLcodigo);
-            this.GBXagregar.Location = new System.Drawing.Point(299, 32);
+            this.GBXagregar.Location = new System.Drawing.Point(308, 32);
             this.GBXagregar.Name = "GBXagregar";
-            this.GBXagregar.Size = new System.Drawing.Size(281, 368);
+            this.GBXagregar.Size = new System.Drawing.Size(281, 379);
             this.GBXagregar.TabIndex = 6;
             this.GBXagregar.TabStop = false;
             this.GBXagregar.Text = "Agregar artículo";
@@ -192,7 +165,7 @@
             this.PBXeliminar.Controls.Add(this.TXBeliminarPorCodigo);
             this.PBXeliminar.Controls.Add(this.LBLeliminarPorCodigo);
             this.PBXeliminar.Controls.Add(this.BTNeliminarPorCodigo);
-            this.PBXeliminar.Location = new System.Drawing.Point(12, 159);
+            this.PBXeliminar.Location = new System.Drawing.Point(12, 170);
             this.PBXeliminar.Name = "PBXeliminar";
             this.PBXeliminar.Size = new System.Drawing.Size(281, 241);
             this.PBXeliminar.TabIndex = 7;
@@ -410,12 +383,75 @@
             this.TXBcargarImagen.Size = new System.Drawing.Size(170, 20);
             this.TXBcargarImagen.TabIndex = 16;
             // 
+            // modificarArtículosToolStripMenuItem
+            // 
+            this.modificarArtículosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.marcaToolStripMenuItem,
+            this.categoriaToolStripMenuItem});
+            this.modificarArtículosToolStripMenuItem.Name = "modificarArtículosToolStripMenuItem";
+            this.modificarArtículosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.modificarArtículosToolStripMenuItem.Text = "Agregar";
+            // 
+            // marcaToolStripMenuItem
+            // 
+            this.marcaToolStripMenuItem.Name = "marcaToolStripMenuItem";
+            this.marcaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.marcaToolStripMenuItem.Text = "Marca";
+            // 
+            // categoriaToolStripMenuItem
+            // 
+            this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoriaToolStripMenuItem.Text = "Categoría";
+            // 
+            // MSlistarArtículos
+            // 
+            this.MSlistarArtículos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.porMarcaToolStripMenuItem,
+            this.porCategoríaToolStripMenuItem});
+            this.MSlistarArtículos.Name = "MSlistarArtículos";
+            this.MSlistarArtículos.Size = new System.Drawing.Size(95, 20);
+            this.MSlistarArtículos.Text = "Listar artículos";
+            // 
+            // porMarcaToolStripMenuItem
+            // 
+            this.porMarcaToolStripMenuItem.Name = "porMarcaToolStripMenuItem";
+            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.porMarcaToolStripMenuItem.Text = "Por marca";
+            // 
+            // porCategoríaToolStripMenuItem
+            // 
+            this.porCategoríaToolStripMenuItem.Name = "porCategoríaToolStripMenuItem";
+            this.porCategoríaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.porCategoríaToolStripMenuItem.Text = "Por categoría";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modificarArtículosToolStripMenuItem,
+            this.MSlistarArtículos});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(604, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "MSTopciones";
+            // 
+            // BTNdetalle
+            // 
+            this.BTNdetalle.Location = new System.Drawing.Point(166, 81);
+            this.BTNdetalle.Name = "BTNdetalle";
+            this.BTNdetalle.Size = new System.Drawing.Size(75, 23);
+            this.BTNdetalle.TabIndex = 5;
+            this.BTNdetalle.Text = "Ver detalle";
+            this.BTNdetalle.UseVisualStyleBackColor = true;
+            // 
             // FRMmenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(595, 412);
+            this.ClientSize = new System.Drawing.Size(604, 423);
             this.Controls.Add(this.PBXeliminar);
             this.Controls.Add(this.GBXagregar);
             this.Controls.Add(this.GBXbuscar);
@@ -423,8 +459,7 @@
             this.Name = "FRMmenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Load += new System.EventHandler(this.FRMmenuPrincipal_Load);
             this.GBXbuscar.ResumeLayout(false);
             this.GBXbuscar.PerformLayout();
             this.GBXagregar.ResumeLayout(false);
@@ -432,17 +467,14 @@
             this.PBXeliminar.ResumeLayout(false);
             this.PBXeliminar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem MSlistarArtículos;
-        private System.Windows.Forms.ToolStripMenuItem porMarcaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem porCategoríaToolStripMenuItem;
         private System.Windows.Forms.Label LBLbusqueda;
         private System.Windows.Forms.TextBox TXTbuscar;
         private System.Windows.Forms.ComboBox CMBbusqueda;
@@ -475,6 +507,14 @@
         private System.Windows.Forms.PictureBox PTBimagen;
         private System.Windows.Forms.TextBox TXBcargarImagen;
         private System.Windows.Forms.Label LBLcargarImagen;
+        private System.Windows.Forms.ToolStripMenuItem modificarArtículosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem marcaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MSlistarArtículos;
+        private System.Windows.Forms.ToolStripMenuItem porMarcaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porCategoríaToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button BTNdetalle;
     }
 }
 

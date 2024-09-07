@@ -61,5 +61,10 @@ namespace TP2WinFormsG21A
         {
 
         }
+
+        private void FRMmenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
