@@ -60,10 +60,13 @@
             this.CMBcategoria = new System.Windows.Forms.ComboBox();
             this.CMBmarca = new System.Windows.Forms.ComboBox();
             this.TXBprecio = new System.Windows.Forms.TextBox();
+            this.PTBimagen = new System.Windows.Forms.PictureBox();
+            this.TXBdescripcion = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.GBXbuscar.SuspendLayout();
             this.GBXagregar.SuspendLayout();
             this.PBXeliminar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -149,6 +152,8 @@
             // 
             // GBXagregar
             // 
+            this.GBXagregar.Controls.Add(this.TXBdescripcion);
+            this.GBXagregar.Controls.Add(this.PTBimagen);
             this.GBXagregar.Controls.Add(this.TXBprecio);
             this.GBXagregar.Controls.Add(this.CMBmarca);
             this.GBXagregar.Controls.Add(this.CMBcategoria);
@@ -286,7 +291,7 @@
             // LBLdescripcion
             // 
             this.LBLdescripcion.AutoSize = true;
-            this.LBLdescripcion.Location = new System.Drawing.Point(6, 217);
+            this.LBLdescripcion.Location = new System.Drawing.Point(105, 180);
             this.LBLdescripcion.Name = "LBLdescripcion";
             this.LBLdescripcion.Size = new System.Drawing.Size(66, 13);
             this.LBLdescripcion.TabIndex = 2;
@@ -366,6 +371,21 @@
             this.TXBprecio.Size = new System.Drawing.Size(191, 20);
             this.TXBprecio.TabIndex = 12;
             // 
+            // PTBimagen
+            // 
+            this.PTBimagen.Location = new System.Drawing.Point(98, 240);
+            this.PTBimagen.Name = "PTBimagen";
+            this.PTBimagen.Size = new System.Drawing.Size(141, 108);
+            this.PTBimagen.TabIndex = 13;
+            this.PTBimagen.TabStop = false;
+            // 
+            // TXBdescripcion
+            // 
+            this.TXBdescripcion.Location = new System.Drawing.Point(9, 196);
+            this.TXBdescripcion.Name = "TXBdescripcion";
+            this.TXBdescripcion.Size = new System.Drawing.Size(255, 20);
+            this.TXBdescripcion.TabIndex = 14;
+            // 
             // FRMmenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,6 +406,7 @@
             this.GBXagregar.PerformLayout();
             this.PBXeliminar.ResumeLayout(false);
             this.PBXeliminar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,6 +446,8 @@
         private System.Windows.Forms.TextBox TXBprecio;
         private System.Windows.Forms.ComboBox CMBmarca;
         private System.Windows.Forms.ComboBox CMBcategoria;
+        private System.Windows.Forms.TextBox TXBdescripcion;
+        private System.Windows.Forms.PictureBox PTBimagen;
     }
 }
 
