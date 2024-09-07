@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TP2WinFormsG21A
 {
-    public partial class Form1 : Form
+    public partial class FRMmenuPrincipal : Form
     {
-        public Form1()
+        public FRMmenuPrincipal()
         {
             InitializeComponent();
         }
@@ -28,6 +28,36 @@ namespace TP2WinFormsG21A
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLmarca_Click(object sender, EventArgs e)
         {
 
         }
