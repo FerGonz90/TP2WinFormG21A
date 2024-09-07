@@ -73,11 +73,12 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MSlistarArtículos});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(626, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(595, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -140,11 +141,12 @@
             // 
             // GBXbuscar
             // 
+            this.GBXbuscar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.GBXbuscar.Controls.Add(this.LBLbusqueda);
             this.GBXbuscar.Controls.Add(this.BTNbuscar);
             this.GBXbuscar.Controls.Add(this.TXTbuscar);
             this.GBXbuscar.Controls.Add(this.CMBbusqueda);
-            this.GBXbuscar.Location = new System.Drawing.Point(12, 27);
+            this.GBXbuscar.Location = new System.Drawing.Point(12, 32);
             this.GBXbuscar.Name = "GBXbuscar";
             this.GBXbuscar.Size = new System.Drawing.Size(281, 121);
             this.GBXbuscar.TabIndex = 5;
@@ -154,6 +156,7 @@
             // 
             // GBXagregar
             // 
+            this.GBXagregar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.GBXagregar.Controls.Add(this.TXBcargarImagen);
             this.GBXagregar.Controls.Add(this.LBLcargarImagen);
             this.GBXagregar.Controls.Add(this.TXBdescripcion);
@@ -170,7 +173,7 @@
             this.GBXagregar.Controls.Add(this.LBLdescripcion);
             this.GBXagregar.Controls.Add(this.LBLnombre);
             this.GBXagregar.Controls.Add(this.LBLcodigo);
-            this.GBXagregar.Location = new System.Drawing.Point(319, 27);
+            this.GBXagregar.Location = new System.Drawing.Point(299, 32);
             this.GBXagregar.Name = "GBXagregar";
             this.GBXagregar.Size = new System.Drawing.Size(281, 368);
             this.GBXagregar.TabIndex = 6;
@@ -179,6 +182,7 @@
             // 
             // PBXeliminar
             // 
+            this.PBXeliminar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.PBXeliminar.Controls.Add(this.BTNeliminarPorCodigoYMarca);
             this.PBXeliminar.Controls.Add(this.TXBelimarMarca);
             this.PBXeliminar.Controls.Add(this.TXBelminarNombre);
@@ -188,7 +192,7 @@
             this.PBXeliminar.Controls.Add(this.TXBeliminarPorCodigo);
             this.PBXeliminar.Controls.Add(this.LBLeliminarPorCodigo);
             this.PBXeliminar.Controls.Add(this.BTNeliminarPorCodigo);
-            this.PBXeliminar.Location = new System.Drawing.Point(12, 154);
+            this.PBXeliminar.Location = new System.Drawing.Point(12, 159);
             this.PBXeliminar.Name = "PBXeliminar";
             this.PBXeliminar.Size = new System.Drawing.Size(281, 241);
             this.PBXeliminar.TabIndex = 7;
@@ -410,7 +414,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 412);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(595, 412);
             this.Controls.Add(this.PBXeliminar);
             this.Controls.Add(this.GBXagregar);
             this.Controls.Add(this.GBXbuscar);
