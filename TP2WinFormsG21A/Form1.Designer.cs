@@ -62,6 +62,8 @@
             this.TXBprecio = new System.Windows.Forms.TextBox();
             this.PTBimagen = new System.Windows.Forms.PictureBox();
             this.TXBdescripcion = new System.Windows.Forms.TextBox();
+            this.LBLcargarImagen = new System.Windows.Forms.Label();
+            this.TXBcargarImagen = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.GBXbuscar.SuspendLayout();
             this.GBXagregar.SuspendLayout();
@@ -152,6 +154,8 @@
             // 
             // GBXagregar
             // 
+            this.GBXagregar.Controls.Add(this.TXBcargarImagen);
+            this.GBXagregar.Controls.Add(this.LBLcargarImagen);
             this.GBXagregar.Controls.Add(this.TXBdescripcion);
             this.GBXagregar.Controls.Add(this.PTBimagen);
             this.GBXagregar.Controls.Add(this.TXBprecio);
@@ -373,9 +377,9 @@
             // 
             // PTBimagen
             // 
-            this.PTBimagen.Location = new System.Drawing.Point(98, 240);
+            this.PTBimagen.Location = new System.Drawing.Point(108, 255);
             this.PTBimagen.Name = "PTBimagen";
-            this.PTBimagen.Size = new System.Drawing.Size(141, 108);
+            this.PTBimagen.Size = new System.Drawing.Size(118, 107);
             this.PTBimagen.TabIndex = 13;
             this.PTBimagen.TabStop = false;
             // 
@@ -383,8 +387,24 @@
             // 
             this.TXBdescripcion.Location = new System.Drawing.Point(9, 196);
             this.TXBdescripcion.Name = "TXBdescripcion";
-            this.TXBdescripcion.Size = new System.Drawing.Size(255, 20);
+            this.TXBdescripcion.Size = new System.Drawing.Size(251, 20);
             this.TXBdescripcion.TabIndex = 14;
+            // 
+            // LBLcargarImagen
+            // 
+            this.LBLcargarImagen.AutoSize = true;
+            this.LBLcargarImagen.Location = new System.Drawing.Point(6, 228);
+            this.LBLcargarImagen.Name = "LBLcargarImagen";
+            this.LBLcargarImagen.Size = new System.Drawing.Size(78, 13);
+            this.LBLcargarImagen.TabIndex = 15;
+            this.LBLcargarImagen.Text = "Cargar imagen:";
+            // 
+            // TXBcargarImagen
+            // 
+            this.TXBcargarImagen.Location = new System.Drawing.Point(90, 225);
+            this.TXBcargarImagen.Name = "TXBcargarImagen";
+            this.TXBcargarImagen.Size = new System.Drawing.Size(170, 20);
+            this.TXBcargarImagen.TabIndex = 16;
             // 
             // FRMmenuPrincipal
             // 
@@ -448,6 +468,8 @@
         private System.Windows.Forms.ComboBox CMBcategoria;
         private System.Windows.Forms.TextBox TXBdescripcion;
         private System.Windows.Forms.PictureBox PTBimagen;
+        private System.Windows.Forms.TextBox TXBcargarImagen;
+        private System.Windows.Forms.Label LBLcargarImagen;
     }
 }
 
