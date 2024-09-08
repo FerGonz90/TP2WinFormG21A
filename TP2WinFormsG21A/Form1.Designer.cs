@@ -33,33 +33,34 @@
             this.CMBbusqueda = new System.Windows.Forms.ComboBox();
             this.BTNbuscar = new System.Windows.Forms.Button();
             this.GBXbuscar = new System.Windows.Forms.GroupBox();
+            this.BTNdetalle = new System.Windows.Forms.Button();
             this.GBXagregar = new System.Windows.Forms.GroupBox();
-            this.PBXeliminar = new System.Windows.Forms.GroupBox();
-            this.BTNeliminarPorCodigo = new System.Windows.Forms.Button();
-            this.LBLeliminarPorCodigo = new System.Windows.Forms.Label();
-            this.TXBeliminarPorCodigo = new System.Windows.Forms.TextBox();
-            this.LBLeliminarPorNombreYMarca = new System.Windows.Forms.Label();
-            this.LBLeliminarNombre = new System.Windows.Forms.Label();
-            this.LBLeliminarMarca = new System.Windows.Forms.Label();
-            this.TXBelminarNombre = new System.Windows.Forms.TextBox();
-            this.TXBelimarMarca = new System.Windows.Forms.TextBox();
-            this.BTNeliminarPorCodigoYMarca = new System.Windows.Forms.Button();
-            this.LBLcodigo = new System.Windows.Forms.Label();
-            this.LBLnombre = new System.Windows.Forms.Label();
-            this.LBLdescripcion = new System.Windows.Forms.Label();
-            this.LBLmarca = new System.Windows.Forms.Label();
-            this.LBLcategoria = new System.Windows.Forms.Label();
-            this.LBLprecio = new System.Windows.Forms.Label();
-            this.LBLimagen = new System.Windows.Forms.Label();
-            this.TXBcodigo = new System.Windows.Forms.TextBox();
-            this.TXBnomnre = new System.Windows.Forms.TextBox();
-            this.CMBcategoria = new System.Windows.Forms.ComboBox();
-            this.CMBmarca = new System.Windows.Forms.ComboBox();
-            this.TXBprecio = new System.Windows.Forms.TextBox();
-            this.PTBimagen = new System.Windows.Forms.PictureBox();
-            this.TXBdescripcion = new System.Windows.Forms.TextBox();
-            this.LBLcargarImagen = new System.Windows.Forms.Label();
             this.TXBcargarImagen = new System.Windows.Forms.TextBox();
+            this.LBLcargarImagen = new System.Windows.Forms.Label();
+            this.TXBdescripcion = new System.Windows.Forms.TextBox();
+            this.PTBimagen = new System.Windows.Forms.PictureBox();
+            this.TXBprecio = new System.Windows.Forms.TextBox();
+            this.CMBmarca = new System.Windows.Forms.ComboBox();
+            this.CMBcategoria = new System.Windows.Forms.ComboBox();
+            this.TXBnomnre = new System.Windows.Forms.TextBox();
+            this.TXBcodigo = new System.Windows.Forms.TextBox();
+            this.LBLimagen = new System.Windows.Forms.Label();
+            this.LBLprecio = new System.Windows.Forms.Label();
+            this.LBLcategoria = new System.Windows.Forms.Label();
+            this.LBLmarca = new System.Windows.Forms.Label();
+            this.LBLdescripcion = new System.Windows.Forms.Label();
+            this.LBLnombre = new System.Windows.Forms.Label();
+            this.LBLcodigo = new System.Windows.Forms.Label();
+            this.PBXeliminar = new System.Windows.Forms.GroupBox();
+            this.BTNeliminarPorCodigoYMarca = new System.Windows.Forms.Button();
+            this.TXBelimarMarca = new System.Windows.Forms.TextBox();
+            this.TXBelminarNombre = new System.Windows.Forms.TextBox();
+            this.LBLeliminarMarca = new System.Windows.Forms.Label();
+            this.LBLeliminarNombre = new System.Windows.Forms.Label();
+            this.LBLeliminarPorNombreYMarca = new System.Windows.Forms.Label();
+            this.TXBeliminarPorCodigo = new System.Windows.Forms.TextBox();
+            this.LBLeliminarPorCodigo = new System.Windows.Forms.Label();
+            this.BTNeliminarPorCodigo = new System.Windows.Forms.Button();
             this.modificarArtículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,11 +68,10 @@
             this.porMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porCategoríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.BTNdetalle = new System.Windows.Forms.Button();
             this.GBXbuscar.SuspendLayout();
             this.GBXagregar.SuspendLayout();
-            this.PBXeliminar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).BeginInit();
+            this.PBXeliminar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,6 +127,15 @@
             this.GBXbuscar.Text = "Buscar artículos";
             this.GBXbuscar.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // BTNdetalle
+            // 
+            this.BTNdetalle.Location = new System.Drawing.Point(166, 81);
+            this.BTNdetalle.Name = "BTNdetalle";
+            this.BTNdetalle.Size = new System.Drawing.Size(75, 23);
+            this.BTNdetalle.TabIndex = 5;
+            this.BTNdetalle.Text = "Ver detalle";
+            this.BTNdetalle.UseVisualStyleBackColor = true;
+            // 
             // GBXagregar
             // 
             this.GBXagregar.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -153,6 +162,139 @@
             this.GBXagregar.TabStop = false;
             this.GBXagregar.Text = "Agregar artículo";
             // 
+            // TXBcargarImagen
+            // 
+            this.TXBcargarImagen.Location = new System.Drawing.Point(90, 225);
+            this.TXBcargarImagen.Name = "TXBcargarImagen";
+            this.TXBcargarImagen.Size = new System.Drawing.Size(170, 20);
+            this.TXBcargarImagen.TabIndex = 16;
+            // 
+            // LBLcargarImagen
+            // 
+            this.LBLcargarImagen.AutoSize = true;
+            this.LBLcargarImagen.Location = new System.Drawing.Point(6, 228);
+            this.LBLcargarImagen.Name = "LBLcargarImagen";
+            this.LBLcargarImagen.Size = new System.Drawing.Size(78, 13);
+            this.LBLcargarImagen.TabIndex = 15;
+            this.LBLcargarImagen.Text = "Cargar imagen:";
+            // 
+            // TXBdescripcion
+            // 
+            this.TXBdescripcion.Location = new System.Drawing.Point(9, 196);
+            this.TXBdescripcion.Name = "TXBdescripcion";
+            this.TXBdescripcion.Size = new System.Drawing.Size(251, 20);
+            this.TXBdescripcion.TabIndex = 14;
+            // 
+            // PTBimagen
+            // 
+            this.PTBimagen.Location = new System.Drawing.Point(108, 255);
+            this.PTBimagen.Name = "PTBimagen";
+            this.PTBimagen.Size = new System.Drawing.Size(118, 107);
+            this.PTBimagen.TabIndex = 13;
+            this.PTBimagen.TabStop = false;
+            // 
+            // TXBprecio
+            // 
+            this.TXBprecio.Location = new System.Drawing.Point(69, 146);
+            this.TXBprecio.Name = "TXBprecio";
+            this.TXBprecio.Size = new System.Drawing.Size(191, 20);
+            this.TXBprecio.TabIndex = 12;
+            // 
+            // CMBmarca
+            // 
+            this.CMBmarca.FormattingEnabled = true;
+            this.CMBmarca.Location = new System.Drawing.Point(69, 86);
+            this.CMBmarca.Name = "CMBmarca";
+            this.CMBmarca.Size = new System.Drawing.Size(191, 21);
+            this.CMBmarca.TabIndex = 11;
+            // 
+            // CMBcategoria
+            // 
+            this.CMBcategoria.FormattingEnabled = true;
+            this.CMBcategoria.Location = new System.Drawing.Point(69, 117);
+            this.CMBcategoria.Name = "CMBcategoria";
+            this.CMBcategoria.Size = new System.Drawing.Size(191, 21);
+            this.CMBcategoria.TabIndex = 10;
+            // 
+            // TXBnomnre
+            // 
+            this.TXBnomnre.Location = new System.Drawing.Point(69, 55);
+            this.TXBnomnre.Name = "TXBnomnre";
+            this.TXBnomnre.Size = new System.Drawing.Size(191, 20);
+            this.TXBnomnre.TabIndex = 9;
+            // 
+            // TXBcodigo
+            // 
+            this.TXBcodigo.Location = new System.Drawing.Point(69, 21);
+            this.TXBcodigo.Name = "TXBcodigo";
+            this.TXBcodigo.Size = new System.Drawing.Size(191, 20);
+            this.TXBcodigo.TabIndex = 7;
+            // 
+            // LBLimagen
+            // 
+            this.LBLimagen.AutoSize = true;
+            this.LBLimagen.Location = new System.Drawing.Point(27, 285);
+            this.LBLimagen.Name = "LBLimagen";
+            this.LBLimagen.Size = new System.Drawing.Size(45, 13);
+            this.LBLimagen.TabIndex = 6;
+            this.LBLimagen.Text = "Imagen:";
+            // 
+            // LBLprecio
+            // 
+            this.LBLprecio.AutoSize = true;
+            this.LBLprecio.Location = new System.Drawing.Point(23, 149);
+            this.LBLprecio.Name = "LBLprecio";
+            this.LBLprecio.Size = new System.Drawing.Size(40, 13);
+            this.LBLprecio.TabIndex = 5;
+            this.LBLprecio.Text = "Precio:";
+            // 
+            // LBLcategoria
+            // 
+            this.LBLcategoria.AutoSize = true;
+            this.LBLcategoria.Location = new System.Drawing.Point(6, 117);
+            this.LBLcategoria.Name = "LBLcategoria";
+            this.LBLcategoria.Size = new System.Drawing.Size(57, 13);
+            this.LBLcategoria.TabIndex = 4;
+            this.LBLcategoria.Text = "Categoría:";
+            // 
+            // LBLmarca
+            // 
+            this.LBLmarca.AutoSize = true;
+            this.LBLmarca.Location = new System.Drawing.Point(23, 86);
+            this.LBLmarca.Name = "LBLmarca";
+            this.LBLmarca.Size = new System.Drawing.Size(40, 13);
+            this.LBLmarca.TabIndex = 3;
+            this.LBLmarca.Text = "Marca:";
+            this.LBLmarca.Click += new System.EventHandler(this.LBLmarca_Click);
+            // 
+            // LBLdescripcion
+            // 
+            this.LBLdescripcion.AutoSize = true;
+            this.LBLdescripcion.Location = new System.Drawing.Point(105, 180);
+            this.LBLdescripcion.Name = "LBLdescripcion";
+            this.LBLdescripcion.Size = new System.Drawing.Size(66, 13);
+            this.LBLdescripcion.TabIndex = 2;
+            this.LBLdescripcion.Text = "Descripcion:";
+            // 
+            // LBLnombre
+            // 
+            this.LBLnombre.AutoSize = true;
+            this.LBLnombre.Location = new System.Drawing.Point(16, 55);
+            this.LBLnombre.Name = "LBLnombre";
+            this.LBLnombre.Size = new System.Drawing.Size(47, 13);
+            this.LBLnombre.TabIndex = 1;
+            this.LBLnombre.Text = "Nombre:";
+            // 
+            // LBLcodigo
+            // 
+            this.LBLcodigo.AutoSize = true;
+            this.LBLcodigo.Location = new System.Drawing.Point(20, 25);
+            this.LBLcodigo.Name = "LBLcodigo";
+            this.LBLcodigo.Size = new System.Drawing.Size(43, 13);
+            this.LBLcodigo.TabIndex = 0;
+            this.LBLcodigo.Text = "Código:";
+            this.LBLcodigo.Click += new System.EventHandler(this.label1_Click_3);
+            // 
             // PBXeliminar
             // 
             this.PBXeliminar.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -172,50 +314,28 @@
             this.PBXeliminar.TabStop = false;
             this.PBXeliminar.Text = "Eliminar artículos";
             // 
-            // BTNeliminarPorCodigo
+            // BTNeliminarPorCodigoYMarca
             // 
-            this.BTNeliminarPorCodigo.Location = new System.Drawing.Point(95, 48);
-            this.BTNeliminarPorCodigo.Name = "BTNeliminarPorCodigo";
-            this.BTNeliminarPorCodigo.Size = new System.Drawing.Size(75, 23);
-            this.BTNeliminarPorCodigo.TabIndex = 0;
-            this.BTNeliminarPorCodigo.Text = "Eliminar";
-            this.BTNeliminarPorCodigo.UseVisualStyleBackColor = true;
+            this.BTNeliminarPorCodigoYMarca.Location = new System.Drawing.Point(95, 173);
+            this.BTNeliminarPorCodigoYMarca.Name = "BTNeliminarPorCodigoYMarca";
+            this.BTNeliminarPorCodigoYMarca.Size = new System.Drawing.Size(75, 23);
+            this.BTNeliminarPorCodigoYMarca.TabIndex = 11;
+            this.BTNeliminarPorCodigoYMarca.Text = "Eliminar";
+            this.BTNeliminarPorCodigoYMarca.UseVisualStyleBackColor = true;
             // 
-            // LBLeliminarPorCodigo
+            // TXBelimarMarca
             // 
-            this.LBLeliminarPorCodigo.AutoSize = true;
-            this.LBLeliminarPorCodigo.Location = new System.Drawing.Point(6, 25);
-            this.LBLeliminarPorCodigo.Name = "LBLeliminarPorCodigo";
-            this.LBLeliminarPorCodigo.Size = new System.Drawing.Size(99, 13);
-            this.LBLeliminarPorCodigo.TabIndex = 1;
-            this.LBLeliminarPorCodigo.Text = "Eliminar por código:";
+            this.TXBelimarMarca.Location = new System.Drawing.Point(186, 137);
+            this.TXBelimarMarca.Name = "TXBelimarMarca";
+            this.TXBelimarMarca.Size = new System.Drawing.Size(77, 20);
+            this.TXBelimarMarca.TabIndex = 10;
             // 
-            // TXBeliminarPorCodigo
+            // TXBelminarNombre
             // 
-            this.TXBeliminarPorCodigo.Location = new System.Drawing.Point(111, 22);
-            this.TXBeliminarPorCodigo.Name = "TXBeliminarPorCodigo";
-            this.TXBeliminarPorCodigo.Size = new System.Drawing.Size(152, 20);
-            this.TXBeliminarPorCodigo.TabIndex = 5;
-            this.TXBeliminarPorCodigo.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
-            // LBLeliminarPorNombreYMarca
-            // 
-            this.LBLeliminarPorNombreYMarca.AutoSize = true;
-            this.LBLeliminarPorNombreYMarca.Location = new System.Drawing.Point(65, 113);
-            this.LBLeliminarPorNombreYMarca.Name = "LBLeliminarPorNombreYMarca";
-            this.LBLeliminarPorNombreYMarca.Size = new System.Drawing.Size(139, 13);
-            this.LBLeliminarPorNombreYMarca.TabIndex = 6;
-            this.LBLeliminarPorNombreYMarca.Text = "Eliminar por nombre y marca";
-            // 
-            // LBLeliminarNombre
-            // 
-            this.LBLeliminarNombre.AutoSize = true;
-            this.LBLeliminarNombre.Location = new System.Drawing.Point(7, 140);
-            this.LBLeliminarNombre.Name = "LBLeliminarNombre";
-            this.LBLeliminarNombre.Size = new System.Drawing.Size(47, 13);
-            this.LBLeliminarNombre.TabIndex = 7;
-            this.LBLeliminarNombre.Text = "Nombre:";
-            this.LBLeliminarNombre.Click += new System.EventHandler(this.label1_Click_1);
+            this.TXBelminarNombre.Location = new System.Drawing.Point(60, 137);
+            this.TXBelminarNombre.Name = "TXBelminarNombre";
+            this.TXBelminarNombre.Size = new System.Drawing.Size(77, 20);
+            this.TXBelminarNombre.TabIndex = 9;
             // 
             // LBLeliminarMarca
             // 
@@ -227,161 +347,50 @@
             this.LBLeliminarMarca.Text = "Marca:";
             this.LBLeliminarMarca.Click += new System.EventHandler(this.label1_Click_2);
             // 
-            // TXBelminarNombre
+            // LBLeliminarNombre
             // 
-            this.TXBelminarNombre.Location = new System.Drawing.Point(60, 137);
-            this.TXBelminarNombre.Name = "TXBelminarNombre";
-            this.TXBelminarNombre.Size = new System.Drawing.Size(77, 20);
-            this.TXBelminarNombre.TabIndex = 9;
+            this.LBLeliminarNombre.AutoSize = true;
+            this.LBLeliminarNombre.Location = new System.Drawing.Point(7, 140);
+            this.LBLeliminarNombre.Name = "LBLeliminarNombre";
+            this.LBLeliminarNombre.Size = new System.Drawing.Size(47, 13);
+            this.LBLeliminarNombre.TabIndex = 7;
+            this.LBLeliminarNombre.Text = "Nombre:";
+            this.LBLeliminarNombre.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // TXBelimarMarca
+            // LBLeliminarPorNombreYMarca
             // 
-            this.TXBelimarMarca.Location = new System.Drawing.Point(186, 137);
-            this.TXBelimarMarca.Name = "TXBelimarMarca";
-            this.TXBelimarMarca.Size = new System.Drawing.Size(77, 20);
-            this.TXBelimarMarca.TabIndex = 10;
+            this.LBLeliminarPorNombreYMarca.AutoSize = true;
+            this.LBLeliminarPorNombreYMarca.Location = new System.Drawing.Point(65, 113);
+            this.LBLeliminarPorNombreYMarca.Name = "LBLeliminarPorNombreYMarca";
+            this.LBLeliminarPorNombreYMarca.Size = new System.Drawing.Size(139, 13);
+            this.LBLeliminarPorNombreYMarca.TabIndex = 6;
+            this.LBLeliminarPorNombreYMarca.Text = "Eliminar por nombre y marca";
             // 
-            // BTNeliminarPorCodigoYMarca
+            // TXBeliminarPorCodigo
             // 
-            this.BTNeliminarPorCodigoYMarca.Location = new System.Drawing.Point(95, 173);
-            this.BTNeliminarPorCodigoYMarca.Name = "BTNeliminarPorCodigoYMarca";
-            this.BTNeliminarPorCodigoYMarca.Size = new System.Drawing.Size(75, 23);
-            this.BTNeliminarPorCodigoYMarca.TabIndex = 11;
-            this.BTNeliminarPorCodigoYMarca.Text = "Eliminar";
-            this.BTNeliminarPorCodigoYMarca.UseVisualStyleBackColor = true;
+            this.TXBeliminarPorCodigo.Location = new System.Drawing.Point(111, 22);
+            this.TXBeliminarPorCodigo.Name = "TXBeliminarPorCodigo";
+            this.TXBeliminarPorCodigo.Size = new System.Drawing.Size(152, 20);
+            this.TXBeliminarPorCodigo.TabIndex = 5;
+            this.TXBeliminarPorCodigo.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
-            // LBLcodigo
+            // LBLeliminarPorCodigo
             // 
-            this.LBLcodigo.AutoSize = true;
-            this.LBLcodigo.Location = new System.Drawing.Point(20, 25);
-            this.LBLcodigo.Name = "LBLcodigo";
-            this.LBLcodigo.Size = new System.Drawing.Size(43, 13);
-            this.LBLcodigo.TabIndex = 0;
-            this.LBLcodigo.Text = "Código:";
-            this.LBLcodigo.Click += new System.EventHandler(this.label1_Click_3);
+            this.LBLeliminarPorCodigo.AutoSize = true;
+            this.LBLeliminarPorCodigo.Location = new System.Drawing.Point(6, 25);
+            this.LBLeliminarPorCodigo.Name = "LBLeliminarPorCodigo";
+            this.LBLeliminarPorCodigo.Size = new System.Drawing.Size(99, 13);
+            this.LBLeliminarPorCodigo.TabIndex = 1;
+            this.LBLeliminarPorCodigo.Text = "Eliminar por código:";
             // 
-            // LBLnombre
+            // BTNeliminarPorCodigo
             // 
-            this.LBLnombre.AutoSize = true;
-            this.LBLnombre.Location = new System.Drawing.Point(16, 55);
-            this.LBLnombre.Name = "LBLnombre";
-            this.LBLnombre.Size = new System.Drawing.Size(47, 13);
-            this.LBLnombre.TabIndex = 1;
-            this.LBLnombre.Text = "Nombre:";
-            // 
-            // LBLdescripcion
-            // 
-            this.LBLdescripcion.AutoSize = true;
-            this.LBLdescripcion.Location = new System.Drawing.Point(105, 180);
-            this.LBLdescripcion.Name = "LBLdescripcion";
-            this.LBLdescripcion.Size = new System.Drawing.Size(66, 13);
-            this.LBLdescripcion.TabIndex = 2;
-            this.LBLdescripcion.Text = "Descripcion:";
-            // 
-            // LBLmarca
-            // 
-            this.LBLmarca.AutoSize = true;
-            this.LBLmarca.Location = new System.Drawing.Point(23, 86);
-            this.LBLmarca.Name = "LBLmarca";
-            this.LBLmarca.Size = new System.Drawing.Size(40, 13);
-            this.LBLmarca.TabIndex = 3;
-            this.LBLmarca.Text = "Marca:";
-            this.LBLmarca.Click += new System.EventHandler(this.LBLmarca_Click);
-            // 
-            // LBLcategoria
-            // 
-            this.LBLcategoria.AutoSize = true;
-            this.LBLcategoria.Location = new System.Drawing.Point(6, 117);
-            this.LBLcategoria.Name = "LBLcategoria";
-            this.LBLcategoria.Size = new System.Drawing.Size(57, 13);
-            this.LBLcategoria.TabIndex = 4;
-            this.LBLcategoria.Text = "Categoría:";
-            // 
-            // LBLprecio
-            // 
-            this.LBLprecio.AutoSize = true;
-            this.LBLprecio.Location = new System.Drawing.Point(23, 149);
-            this.LBLprecio.Name = "LBLprecio";
-            this.LBLprecio.Size = new System.Drawing.Size(40, 13);
-            this.LBLprecio.TabIndex = 5;
-            this.LBLprecio.Text = "Precio:";
-            // 
-            // LBLimagen
-            // 
-            this.LBLimagen.AutoSize = true;
-            this.LBLimagen.Location = new System.Drawing.Point(27, 285);
-            this.LBLimagen.Name = "LBLimagen";
-            this.LBLimagen.Size = new System.Drawing.Size(45, 13);
-            this.LBLimagen.TabIndex = 6;
-            this.LBLimagen.Text = "Imagen:";
-            // 
-            // TXBcodigo
-            // 
-            this.TXBcodigo.Location = new System.Drawing.Point(69, 21);
-            this.TXBcodigo.Name = "TXBcodigo";
-            this.TXBcodigo.Size = new System.Drawing.Size(191, 20);
-            this.TXBcodigo.TabIndex = 7;
-            // 
-            // TXBnomnre
-            // 
-            this.TXBnomnre.Location = new System.Drawing.Point(69, 55);
-            this.TXBnomnre.Name = "TXBnomnre";
-            this.TXBnomnre.Size = new System.Drawing.Size(191, 20);
-            this.TXBnomnre.TabIndex = 9;
-            // 
-            // CMBcategoria
-            // 
-            this.CMBcategoria.FormattingEnabled = true;
-            this.CMBcategoria.Location = new System.Drawing.Point(69, 117);
-            this.CMBcategoria.Name = "CMBcategoria";
-            this.CMBcategoria.Size = new System.Drawing.Size(191, 21);
-            this.CMBcategoria.TabIndex = 10;
-            // 
-            // CMBmarca
-            // 
-            this.CMBmarca.FormattingEnabled = true;
-            this.CMBmarca.Location = new System.Drawing.Point(69, 86);
-            this.CMBmarca.Name = "CMBmarca";
-            this.CMBmarca.Size = new System.Drawing.Size(191, 21);
-            this.CMBmarca.TabIndex = 11;
-            // 
-            // TXBprecio
-            // 
-            this.TXBprecio.Location = new System.Drawing.Point(69, 146);
-            this.TXBprecio.Name = "TXBprecio";
-            this.TXBprecio.Size = new System.Drawing.Size(191, 20);
-            this.TXBprecio.TabIndex = 12;
-            // 
-            // PTBimagen
-            // 
-            this.PTBimagen.Location = new System.Drawing.Point(108, 255);
-            this.PTBimagen.Name = "PTBimagen";
-            this.PTBimagen.Size = new System.Drawing.Size(118, 107);
-            this.PTBimagen.TabIndex = 13;
-            this.PTBimagen.TabStop = false;
-            // 
-            // TXBdescripcion
-            // 
-            this.TXBdescripcion.Location = new System.Drawing.Point(9, 196);
-            this.TXBdescripcion.Name = "TXBdescripcion";
-            this.TXBdescripcion.Size = new System.Drawing.Size(251, 20);
-            this.TXBdescripcion.TabIndex = 14;
-            // 
-            // LBLcargarImagen
-            // 
-            this.LBLcargarImagen.AutoSize = true;
-            this.LBLcargarImagen.Location = new System.Drawing.Point(6, 228);
-            this.LBLcargarImagen.Name = "LBLcargarImagen";
-            this.LBLcargarImagen.Size = new System.Drawing.Size(78, 13);
-            this.LBLcargarImagen.TabIndex = 15;
-            this.LBLcargarImagen.Text = "Cargar imagen:";
-            // 
-            // TXBcargarImagen
-            // 
-            this.TXBcargarImagen.Location = new System.Drawing.Point(90, 225);
-            this.TXBcargarImagen.Name = "TXBcargarImagen";
-            this.TXBcargarImagen.Size = new System.Drawing.Size(170, 20);
-            this.TXBcargarImagen.TabIndex = 16;
+            this.BTNeliminarPorCodigo.Location = new System.Drawing.Point(95, 48);
+            this.BTNeliminarPorCodigo.Name = "BTNeliminarPorCodigo";
+            this.BTNeliminarPorCodigo.Size = new System.Drawing.Size(75, 23);
+            this.BTNeliminarPorCodigo.TabIndex = 0;
+            this.BTNeliminarPorCodigo.Text = "Eliminar";
+            this.BTNeliminarPorCodigo.UseVisualStyleBackColor = true;
             // 
             // modificarArtículosToolStripMenuItem
             // 
@@ -437,15 +446,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "MSTopciones";
             // 
-            // BTNdetalle
-            // 
-            this.BTNdetalle.Location = new System.Drawing.Point(166, 81);
-            this.BTNdetalle.Name = "BTNdetalle";
-            this.BTNdetalle.Size = new System.Drawing.Size(75, 23);
-            this.BTNdetalle.TabIndex = 5;
-            this.BTNdetalle.Text = "Ver detalle";
-            this.BTNdetalle.UseVisualStyleBackColor = true;
-            // 
             // FRMmenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,9 +464,9 @@
             this.GBXbuscar.PerformLayout();
             this.GBXagregar.ResumeLayout(false);
             this.GBXagregar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).EndInit();
             this.PBXeliminar.ResumeLayout(false);
             this.PBXeliminar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
