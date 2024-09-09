@@ -66,5 +66,20 @@ namespace TP2WinFormsG21A
         {
 
         }
+
+        private void porMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void todosLosArtículosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 ventana = new Form1();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

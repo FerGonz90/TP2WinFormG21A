@@ -68,11 +68,15 @@
             this.porMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porCategoríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.todosLosArtículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.GBXbuscar.SuspendLayout();
             this.GBXagregar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).BeginInit();
             this.PBXeliminar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LBLbusqueda
@@ -119,7 +123,7 @@
             this.GBXbuscar.Controls.Add(this.BTNbuscar);
             this.GBXbuscar.Controls.Add(this.TXTbuscar);
             this.GBXbuscar.Controls.Add(this.CMBbusqueda);
-            this.GBXbuscar.Location = new System.Drawing.Point(12, 32);
+            this.GBXbuscar.Location = new System.Drawing.Point(12, 60);
             this.GBXbuscar.Name = "GBXbuscar";
             this.GBXbuscar.Size = new System.Drawing.Size(281, 121);
             this.GBXbuscar.TabIndex = 5;
@@ -155,7 +159,7 @@
             this.GBXagregar.Controls.Add(this.LBLdescripcion);
             this.GBXagregar.Controls.Add(this.LBLnombre);
             this.GBXagregar.Controls.Add(this.LBLcodigo);
-            this.GBXagregar.Location = new System.Drawing.Point(308, 32);
+            this.GBXagregar.Location = new System.Drawing.Point(308, 60);
             this.GBXagregar.Name = "GBXagregar";
             this.GBXagregar.Size = new System.Drawing.Size(281, 379);
             this.GBXagregar.TabIndex = 6;
@@ -307,7 +311,7 @@
             this.PBXeliminar.Controls.Add(this.TXBeliminarPorCodigo);
             this.PBXeliminar.Controls.Add(this.LBLeliminarPorCodigo);
             this.PBXeliminar.Controls.Add(this.BTNeliminarPorCodigo);
-            this.PBXeliminar.Location = new System.Drawing.Point(12, 170);
+            this.PBXeliminar.Location = new System.Drawing.Point(12, 198);
             this.PBXeliminar.Name = "PBXeliminar";
             this.PBXeliminar.Size = new System.Drawing.Size(281, 241);
             this.PBXeliminar.TabIndex = 7;
@@ -416,6 +420,7 @@
             // MSlistarArtículos
             // 
             this.MSlistarArtículos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.todosLosArtículosToolStripMenuItem,
             this.porMarcaToolStripMenuItem,
             this.porCategoríaToolStripMenuItem});
             this.MSlistarArtículos.Name = "MSlistarArtículos";
@@ -427,6 +432,7 @@
             this.porMarcaToolStripMenuItem.Name = "porMarcaToolStripMenuItem";
             this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.porMarcaToolStripMenuItem.Text = "Por marca";
+            this.porMarcaToolStripMenuItem.Click += new System.EventHandler(this.porMarcaToolStripMenuItem_Click);
             // 
             // porCategoríaToolStripMenuItem
             // 
@@ -446,12 +452,39 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "MSTopciones";
             // 
+            // todosLosArtículosToolStripMenuItem
+            // 
+            this.todosLosArtículosToolStripMenuItem.Name = "todosLosArtículosToolStripMenuItem";
+            this.todosLosArtículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.todosLosArtículosToolStripMenuItem.Text = "Todos los artículos";
+            this.todosLosArtículosToolStripMenuItem.Click += new System.EventHandler(this.todosLosArtículosToolStripMenuItem_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(604, 25);
+            this.toolStrip1.TabIndex = 8;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(122, 22);
+            this.toolStripButton1.Text = "Modificar un artículo";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // FRMmenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(604, 423);
+            this.ClientSize = new System.Drawing.Size(604, 448);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.PBXeliminar);
             this.Controls.Add(this.GBXagregar);
             this.Controls.Add(this.GBXbuscar);
@@ -469,6 +502,8 @@
             this.PBXeliminar.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,6 +550,9 @@
         private System.Windows.Forms.ToolStripMenuItem porCategoríaToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button BTNdetalle;
+        private System.Windows.Forms.ToolStripMenuItem todosLosArtículosToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 
