@@ -14,7 +14,7 @@ namespace TP2WinFormsG21A
         public string descripcionArticulo { get; set; }
         public int marcaArticulo { get; set; }
         public int categoriaArticulo { get; set; }
-        public string imagenArticulo { get; set; }
-        public float precioArticulo { get; set; }
+        //public string imagenArticulo { get; set; }
+        //public float precioArticulo { get; set; }
     }
 }

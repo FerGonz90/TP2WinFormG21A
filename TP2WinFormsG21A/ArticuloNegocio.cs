@@ -33,10 +33,9 @@ namespace TP2WinFormsG21A
                     aux.codigoArticulo = (int)lector["Id"];
                     aux.nombreArticulo = (string)lector["Nombre"];
                     aux.descripcionArticulo = (string)lector["Descripcion"];
-                    aux.marcaArticulo = (int)lector["Marca"];
-                    aux.categoriaArticulo = (int)lector["Categoria"];
-                    aux.imagenArticulo = (string)lector["Imagen"];
-                    aux.precioArticulo = (float)lector["Precio"];
+                    aux.marcaArticulo = (int)lector["IdMarca"];
+                    aux.categoriaArticulo = (int)lector["IdCategoria"];
+                    //aux.precioArticulo = (float)lector["Precio"];
 
                     lista.Add(aux);
                 }
@@ -44,10 +43,10 @@ namespace TP2WinFormsG21A
 
                 return lista;
             }
-            catch (Exception)
+            catch (Exception Ex)
             {
 
-                throw;
+                throw Ex;
             }
 
             finally

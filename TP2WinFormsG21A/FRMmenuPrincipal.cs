@@ -74,7 +74,8 @@ namespace TP2WinFormsG21A
 
         private void todosLosArtículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 ventana = new Form1();
+            FRMlistaTodosArticulos ventanaListaTodosArticulos = new FRMlistaTodosArticulos();
+            ventanaListaTodosArticulos.Show();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
