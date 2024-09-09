@@ -30,12 +30,12 @@ namespace TP2WinFormsG21A
                 while (lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.codigoArticulo = (int)lector["Id"];
-                    aux.nombreArticulo = (string)lector["Nombre"];
-                    aux.descripcionArticulo = (string)lector["Descripcion"];
-                    aux.marcaArticulo = (int)lector["IdMarca"];
-                    aux.categoriaArticulo = (int)lector["IdCategoria"];
-                    //aux.precioArticulo = (float)lector["Precio"];
+                    aux.Codigo = (int)lector["Id"];
+                    aux.Nombre = (string)lector["Nombre"];
+                    aux.Descripcion = (string)lector["Descripcion"];
+                    aux.Marca = (int)lector["IdMarca"];
+                    aux.Categoria = (int)lector["IdCategoria"];
+                    aux.Precio = (decimal)lector["Precio"];
 
                     lista.Add(aux);
                 }

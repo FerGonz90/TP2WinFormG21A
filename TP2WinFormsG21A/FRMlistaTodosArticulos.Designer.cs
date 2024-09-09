@@ -37,7 +37,7 @@
             this.DGVlistaTodosArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVlistaTodosArticulos.Location = new System.Drawing.Point(0, 0);
             this.DGVlistaTodosArticulos.Name = "DGVlistaTodosArticulos";
-            this.DGVlistaTodosArticulos.Size = new System.Drawing.Size(788, 242);
+            this.DGVlistaTodosArticulos.Size = new System.Drawing.Size(671, 242);
             this.DGVlistaTodosArticulos.TabIndex = 0;
             this.DGVlistaTodosArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

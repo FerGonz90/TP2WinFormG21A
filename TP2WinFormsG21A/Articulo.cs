@@ -9,12 +9,12 @@ namespace TP2WinFormsG21A
 {
     internal class Articulo
     {
-        public int codigoArticulo { get; set; }
-        public string nombreArticulo { get; set; }
-        public string descripcionArticulo { get; set; }
-        public int marcaArticulo { get; set; }
-        public int categoriaArticulo { get; set; }
+        public int Codigo { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public int Marca { get; set; }
+        public int Categoria { get; set; }
         //public string imagenArticulo { get; set; }
-        //public float precioArticulo { get; set; }
+        public decimal Precio { get; set; }
     }
 }
