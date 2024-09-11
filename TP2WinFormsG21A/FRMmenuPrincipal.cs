@@ -69,7 +69,8 @@ namespace TP2WinFormsG21A
 
         private void porMarcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmListadoMarcas ventanaListadoMarcas = new frmListadoMarcas();
+            ventanaListadoMarcas.Show();
         }
 
         private void todosLosArtículosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,6 +80,11 @@ namespace TP2WinFormsG21A
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MSlistarArtículos_Click(object sender, EventArgs e)
         {
 
         }

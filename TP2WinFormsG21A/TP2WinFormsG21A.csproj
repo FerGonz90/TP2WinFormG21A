@@ -51,6 +51,12 @@
     <Compile Include="ArticuloNegocio.cs" />
     <Compile Include="BuscarArticulo.cs" />
     <Compile Include="EliminarArticulo.cs" />
+    <Compile Include="frmListadoMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoMarcas.Designer.cs">
+      <DependentUpon>frmListadoMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMlistaTodosArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,8 +69,13 @@
     <Compile Include="FRMmenuPrincipal.Designer.cs">
       <DependentUpon>FRMmenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Marca.cs" />
+    <Compile Include="MarcaNegocio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmListadoMarcas.resx">
+      <DependentUpon>frmListadoMarcas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMlistaTodosArticulos.resx">
       <DependentUpon>FRMlistaTodosArticulos.cs</DependentUpon>
     </EmbeddedResource>
