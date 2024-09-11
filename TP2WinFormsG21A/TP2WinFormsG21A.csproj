@@ -69,6 +69,8 @@
     <Compile Include="FRMmenuPrincipal.Designer.cs">
       <DependentUpon>FRMmenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Imagen.cs" />
+    <Compile Include="ImagenNegocio.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="MarcaNegocio.cs" />
     <Compile Include="Program.cs" />

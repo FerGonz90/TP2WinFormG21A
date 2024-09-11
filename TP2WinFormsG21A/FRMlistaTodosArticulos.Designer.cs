@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.DGVlistaTodosArticulos = new System.Windows.Forms.DataGridView();
+            this.PTBimagen = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVlistaTodosArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).BeginInit();
             this.SuspendLayout();
             // 
             // DGVlistaTodosArticulos
@@ -41,16 +43,27 @@
             this.DGVlistaTodosArticulos.TabIndex = 0;
             this.DGVlistaTodosArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // PTBimagen
+            // 
+            this.PTBimagen.Location = new System.Drawing.Point(677, 0);
+            this.PTBimagen.Name = "PTBimagen";
+            this.PTBimagen.Size = new System.Drawing.Size(241, 242);
+            this.PTBimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PTBimagen.TabIndex = 1;
+            this.PTBimagen.TabStop = false;
+            // 
             // FRMlistaTodosArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(966, 365);
+            this.Controls.Add(this.PTBimagen);
             this.Controls.Add(this.DGVlistaTodosArticulos);
             this.Name = "FRMlistaTodosArticulos";
             this.Text = "Lista de todos los articulos";
             this.Load += new System.EventHandler(this.FRMlistaTodosArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVlistaTodosArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -58,5 +71,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DGVlistaTodosArticulos;
+        private System.Windows.Forms.PictureBox PTBimagen;
     }
 }

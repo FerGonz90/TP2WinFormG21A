@@ -12,6 +12,7 @@ namespace TP2WinFormsG21A
 {
     public partial class FRMlistaTodosArticulos : Form
     {
+        List<Imagen> listaImagenes = new List<Imagen>();
         public FRMlistaTodosArticulos()
         {
             InitializeComponent();
@@ -26,6 +27,9 @@ namespace TP2WinFormsG21A
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             DGVlistaTodosArticulos.DataSource = negocio.listar();
+            ImagenNegocio negocioImagen = new ImagenNegocio();
+            listaImagenes = negocioImagen.listar();
+            PTBimagen.Load(listaImagenes[0]._Imagen);
         }
     }
 }
