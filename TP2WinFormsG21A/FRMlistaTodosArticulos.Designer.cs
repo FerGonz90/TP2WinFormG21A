@@ -42,6 +42,7 @@
             this.DGVlistaTodosArticulos.Size = new System.Drawing.Size(671, 242);
             this.DGVlistaTodosArticulos.TabIndex = 0;
             this.DGVlistaTodosArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.DGVlistaTodosArticulos.SelectionChanged += new System.EventHandler(this.DGVlistaTodosArticulos_SelectionChanged);
             // 
             // PTBimagen
             // 

@@ -46,10 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarArticulo.cs" />
-    <Compile Include="ArticuloNegocio.cs" />
-    <Compile Include="BuscarArticulo.cs" />
-    <Compile Include="EliminarArticulo.cs" />
     <Compile Include="frmListadoMarcas.cs">
       <SubType>Form</SubType>
     </Compile>

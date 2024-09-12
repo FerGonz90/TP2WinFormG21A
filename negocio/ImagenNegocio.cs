@@ -14,25 +14,18 @@ namespace negocio
         {
 
             List<Imagen> listaImagenes = new List<Imagen>();
-            SqlConnection conexionImagenes = new SqlConnection();
-            SqlCommand comandoImagenes = new SqlCommand();
-            SqlDataReader lectorImagenes;
+            AccesoDatos datosImagen = new AccesoDatos();
 
             try
             {
-                conexionImagenes.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
-                comandoImagenes.CommandType = System.Data.CommandType.Text;
-                comandoImagenes.CommandText = "select Id, ImagenUrl from IMAGENES";
-                comandoImagenes.Connection = conexionImagenes;
+                datosImagen.setearConsulta("select Id, ImagenUrl from IMAGENES");
+                datosImagen.ejecutarLectura();
 
-                conexionImagenes.Open();
-                lectorImagenes = comandoImagenes.ExecuteReader();
-
-                while (lectorImagenes.Read())
+                while (datosImagen.Lector.Read())
                 {
                     Imagen aux = new Imagen();
-                    aux.Id = (int)lectorImagenes["Id"];
-                    aux._Imagen = (string)lectorImagenes["ImagenUrl"];
+                    aux.Id = (int)datosImagen.Lector["Id"];
+                    aux._Imagen = (string)datosImagen.Lector["ImagenUrl"];
 
 
                     listaImagenes.Add(aux);
@@ -49,7 +42,7 @@ namespace negocio
 
             finally
             {
-                conexionImagenes.Close();
+                datosImagen.cerrarConexion();
             }
 
         }

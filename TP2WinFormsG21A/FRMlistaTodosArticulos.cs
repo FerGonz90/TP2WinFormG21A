@@ -14,7 +14,7 @@ namespace TP2WinFormsG21A
 {
     public partial class FRMlistaTodosArticulos : Form
     {
-        List<Imagen> listaImagenes = new List<Imagen>();
+        List<Articulo> listaArticulo = new List<Articulo>();
         public FRMlistaTodosArticulos()
         {
             InitializeComponent();
@@ -28,10 +28,28 @@ namespace TP2WinFormsG21A
         private void FRMlistaTodosArticulos_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            DGVlistaTodosArticulos.DataSource = negocio.listar();
-            ImagenNegocio negocioImagen = new ImagenNegocio();
-            listaImagenes = negocioImagen.listar();
-            PTBimagen.Load(listaImagenes[0]._Imagen);
+            listaArticulo = negocio.listar();
+            DGVlistaTodosArticulos.DataSource = listaArticulo;
+            cargarImagen(listaArticulo[0].Imagen._Imagen);
+        }
+
+        private void DGVlistaTodosArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)DGVlistaTodosArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.Imagen._Imagen);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                PTBimagen.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                PTBimagen.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
+            }
         }
     }
 }
