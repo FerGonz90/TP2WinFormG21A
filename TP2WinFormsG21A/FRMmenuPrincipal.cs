@@ -124,5 +124,28 @@ namespace TP2WinFormsG21A
                 CMBmarca.Items.Add(marca.NombreMarca);
             }
         }
+
+        private void btnAgregarArticulo_Click(object sender, EventArgs e)
+        {
+            Articulo articulo = new Articulo();
+            ArticuloNegocio negocioArticulo = new ArticuloNegocio();
+
+            try
+            {
+                articulo.Codigo = TXBcodigo.Text;
+                articulo.Nombre = TXBnomnre.Text;
+                articulo.Descripcion = TXBdescripcion.Text;
+                articulo.Precio = decimal.Parse(TXBprecio.Text);
+
+                negocioArticulo.agregar(articulo);
+                MessageBox.Show("Articulo agregado");
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

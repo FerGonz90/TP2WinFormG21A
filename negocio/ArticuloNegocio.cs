@@ -24,12 +24,12 @@ namespace negocio
                 while (datosArticulo.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Codigo = (int)datosArticulo.Lector["Id"];
+                    aux.Codigo = (string)datosArticulo.Lector["Codigo"];
                     aux.Nombre = (string)datosArticulo.Lector["Nombre"];
                     aux.Descripcion = (string)datosArticulo.Lector["Descripcion"];
-                    aux.Marca = new Marca();
-                    aux.Marca.IdMarca = (int)datosArticulo.Lector["IdMarca"];
-                    aux.Categoria = (int)datosArticulo.Lector["IdCategoria"];
+                    //aux.Marca = new Marca();
+                    //aux.Marca.IdMarca = (int)datosArticulo.Lector["IdMarca"];
+                    //aux.Categoria = (int)datosArticulo.Lector["IdCategoria"];
                     aux.Precio = (decimal)datosArticulo.Lector["Precio"];
                     aux.Imagen = new Imagen();
                     aux.Imagen.Id = (int)datosArticulo.Lector["Id"];
@@ -52,6 +52,25 @@ namespace negocio
                 datosArticulo.cerrarConexion();
             }
         
+        }
+
+        public void agregar (Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio) values (" + nuevo.Codigo + ", '" + nuevo.Nombre + "','" + nuevo.Descripcion + "'," + nuevo.Precio + ")");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
         
     }
