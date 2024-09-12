@@ -56,6 +56,12 @@
     <Compile Include="frmListadoMarcas.Designer.cs">
       <DependentUpon>frmListadoMarcas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListArtPorMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListArtPorMarca.Designer.cs">
+      <DependentUpon>frmListArtPorMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMlistaTodosArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmListadoMarcas.resx">
       <DependentUpon>frmListadoMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListArtPorMarca.resx">
+      <DependentUpon>frmListArtPorMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMlistaTodosArticulos.resx">
       <DependentUpon>FRMlistaTodosArticulos.cs</DependentUpon>

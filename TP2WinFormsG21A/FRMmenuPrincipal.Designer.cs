@@ -69,6 +69,7 @@
             this.porMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porCategoríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.listarMarcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.GBXbuscar.SuspendLayout();
@@ -228,6 +229,7 @@
             this.CMBmarca.Name = "CMBmarca";
             this.CMBmarca.Size = new System.Drawing.Size(284, 28);
             this.CMBmarca.TabIndex = 11;
+            this.CMBmarca.DropDown += new System.EventHandler(this.CMBmarca_DropDown);
             this.CMBmarca.SelectedIndexChanged += new System.EventHandler(this.CMBmarca_SelectedIndexChanged);
             // 
             // CMBcategoria
@@ -495,12 +497,20 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modificarArtículosToolStripMenuItem,
-            this.MSlistarArtículos});
+            this.MSlistarArtículos,
+            this.listarMarcasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(906, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "MSTopciones";
+            // 
+            // listarMarcasToolStripMenuItem
+            // 
+            this.listarMarcasToolStripMenuItem.Name = "listarMarcasToolStripMenuItem";
+            this.listarMarcasToolStripMenuItem.Size = new System.Drawing.Size(130, 29);
+            this.listarMarcasToolStripMenuItem.Text = "Listar marcas";
+            this.listarMarcasToolStripMenuItem.Click += new System.EventHandler(this.listarMarcasToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -599,6 +609,7 @@
         private System.Windows.Forms.ToolStripMenuItem todosLosArtículosToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripMenuItem listarMarcasToolStripMenuItem;
     }
 }
 

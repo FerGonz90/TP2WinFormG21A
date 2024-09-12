@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
+using negocio;
 
 namespace TP2WinFormsG21A
 {
@@ -70,14 +71,14 @@ namespace TP2WinFormsG21A
 
         private void porMarcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListadoMarcas ventanaListadoMarcas = new frmListadoMarcas();
-            ventanaListadoMarcas.Show();
+            frmListArtPorMarca ventanaListArtMarcas = new frmListArtPorMarca();
+            ventanaListArtMarcas.ShowDialog();
         }
 
         private void todosLosArtículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FRMlistaTodosArticulos ventanaListaTodosArticulos = new FRMlistaTodosArticulos();
-            ventanaListaTodosArticulos.Show();
+            ventanaListaTodosArticulos.ShowDialog();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -98,6 +99,30 @@ namespace TP2WinFormsG21A
         private void TXBnomnre_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listarMarcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoMarcas ventanaListadoMarcas = new frmListadoMarcas();
+            ventanaListadoMarcas.ShowDialog();
+        }
+
+        private void CMBmarca_DropDown(object sender, EventArgs e)
+        {
+            CMBmarca.Items.Clear();
+
+            CargarMarcas();
+        }
+
+        private void CargarMarcas()
+        {
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            List<Marca> listaMarcas = marcaNegocio.listar();
+
+            foreach (Marca marca in listaMarcas)
+            {
+                CMBmarca.Items.Add(marca.NombreMarca);
+            }
         }
     }
 }
