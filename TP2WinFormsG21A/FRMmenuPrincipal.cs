@@ -66,7 +66,18 @@ namespace TP2WinFormsG21A
 
         private void FRMmenuPrincipal_Load(object sender, EventArgs e)
         {
+            MarcaNegocio negocioMarca = new MarcaNegocio();
+            CategoriaNegocio negocioCategoria = new CategoriaNegocio();
+            try
+            {
+                CMBmarca.DataSource = negocioMarca.listar();
+                CMBcategoria.DataSource = negocioCategoria.listar();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void porMarcaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,7 +120,7 @@ namespace TP2WinFormsG21A
 
         private void CMBmarca_DropDown(object sender, EventArgs e)
         {
-            CMBmarca.Items.Clear();
+            ///CMBmarca.Items.Clear();
 
             CargarMarcas();
         }
@@ -121,7 +132,7 @@ namespace TP2WinFormsG21A
 
             foreach (Marca marca in listaMarcas)
             {
-                CMBmarca.Items.Add(marca.NombreMarca);
+                ///CMBmarca.Items.Add(marca.NombreMarca);
             }
         }
 
@@ -136,6 +147,8 @@ namespace TP2WinFormsG21A
                 articulo.Nombre = TXBnomnre.Text;
                 articulo.Descripcion = TXBdescripcion.Text;
                 articulo.Precio = decimal.Parse(TXBprecio.Text);
+                articulo.Marca = (Marca)CMBmarca.SelectedItem;
+                articulo.Categoria = (Categoria)CMBcategoria.SelectedItem;
 
                 negocioArticulo.agregar(articulo);
                 MessageBox.Show("Articulo agregado");

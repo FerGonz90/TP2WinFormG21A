@@ -223,6 +223,7 @@
             // 
             // CMBcategoria
             // 
+            this.CMBcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBcategoria.FormattingEnabled = true;
             this.CMBcategoria.Location = new System.Drawing.Point(69, 117);
             this.CMBcategoria.Name = "CMBcategoria";
@@ -267,18 +268,18 @@
             this.LBLcategoria.AutoSize = true;
             this.LBLcategoria.Location = new System.Drawing.Point(6, 117);
             this.LBLcategoria.Name = "LBLcategoria";
-            this.LBLcategoria.Size = new System.Drawing.Size(82, 13);
+            this.LBLcategoria.Size = new System.Drawing.Size(57, 13);
             this.LBLcategoria.TabIndex = 4;
-            this.LBLcategoria.Text = "(NO) Categoría:";
+            this.LBLcategoria.Text = "Categoría:";
             // 
             // LBLmarca
             // 
             this.LBLmarca.AutoSize = true;
             this.LBLmarca.Location = new System.Drawing.Point(23, 86);
             this.LBLmarca.Name = "LBLmarca";
-            this.LBLmarca.Size = new System.Drawing.Size(65, 13);
+            this.LBLmarca.Size = new System.Drawing.Size(40, 13);
             this.LBLmarca.TabIndex = 3;
-            this.LBLmarca.Text = "(NO) Marca:";
+            this.LBLmarca.Text = "Marca:";
             this.LBLmarca.Click += new System.EventHandler(this.LBLmarca_Click);
             // 
             // LBLdescripcion
@@ -516,7 +517,7 @@
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
             this.btnAgregarArticulo.Size = new System.Drawing.Size(189, 23);
             this.btnAgregarArticulo.TabIndex = 9;
-            this.btnAgregarArticulo.Text = "Agregar Artìculo";
+            this.btnAgregarArticulo.Text = "Aceptar";
             this.btnAgregarArticulo.UseVisualStyleBackColor = true;
             this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
             // 
