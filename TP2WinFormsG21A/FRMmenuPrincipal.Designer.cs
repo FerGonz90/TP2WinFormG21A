@@ -101,6 +101,7 @@
             // 
             // CMBbusqueda
             // 
+            this.CMBbusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBbusqueda.FormattingEnabled = true;
             this.CMBbusqueda.Location = new System.Drawing.Point(213, 38);
             this.CMBbusqueda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -220,12 +221,14 @@
             // 
             // CMBmarca
             // 
+            this.CMBmarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBmarca.FormattingEnabled = true;
             this.CMBmarca.Location = new System.Drawing.Point(104, 132);
             this.CMBmarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CMBmarca.Name = "CMBmarca";
             this.CMBmarca.Size = new System.Drawing.Size(284, 28);
             this.CMBmarca.TabIndex = 11;
+            this.CMBmarca.SelectedIndexChanged += new System.EventHandler(this.CMBmarca_SelectedIndexChanged);
             // 
             // CMBcategoria
             // 
@@ -243,6 +246,7 @@
             this.TXBnomnre.Name = "TXBnomnre";
             this.TXBnomnre.Size = new System.Drawing.Size(284, 26);
             this.TXBnomnre.TabIndex = 9;
+            this.TXBnomnre.TextChanged += new System.EventHandler(this.TXBnomnre_TextChanged);
             // 
             // TXBcodigo
             // 
@@ -467,21 +471,21 @@
             // todosLosArtículosToolStripMenuItem
             // 
             this.todosLosArtículosToolStripMenuItem.Name = "todosLosArtículosToolStripMenuItem";
-            this.todosLosArtículosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.todosLosArtículosToolStripMenuItem.Size = new System.Drawing.Size(261, 34);
             this.todosLosArtículosToolStripMenuItem.Text = "Todos los artículos";
             this.todosLosArtículosToolStripMenuItem.Click += new System.EventHandler(this.todosLosArtículosToolStripMenuItem_Click);
             // 
             // porMarcaToolStripMenuItem
             // 
             this.porMarcaToolStripMenuItem.Name = "porMarcaToolStripMenuItem";
-            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(261, 34);
             this.porMarcaToolStripMenuItem.Text = "Por marca";
             this.porMarcaToolStripMenuItem.Click += new System.EventHandler(this.porMarcaToolStripMenuItem_Click);
             // 
             // porCategoríaToolStripMenuItem
             // 
             this.porCategoríaToolStripMenuItem.Name = "porCategoríaToolStripMenuItem";
-            this.porCategoríaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.porCategoríaToolStripMenuItem.Size = new System.Drawing.Size(261, 34);
             this.porCategoríaToolStripMenuItem.Text = "Por categoría";
             // 
             // menuStrip1
@@ -494,7 +498,7 @@
             this.MSlistarArtículos});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(906, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(906, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "MSTopciones";
             // 
@@ -503,7 +507,7 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 35);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.toolStrip1.Size = new System.Drawing.Size(906, 34);

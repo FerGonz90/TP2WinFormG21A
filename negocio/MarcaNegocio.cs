@@ -4,10 +4,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using dominio;
 
 namespace TP2WinFormsG21A
 {
-    internal class MarcaNegocio
+    public class MarcaNegocio
     {
         public List<Marca> listar()
         {

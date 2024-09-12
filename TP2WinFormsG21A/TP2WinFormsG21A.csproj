@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgregarArticulo.cs" />
-    <Compile Include="Articulo.cs" />
     <Compile Include="ArticuloNegocio.cs" />
     <Compile Include="BuscarArticulo.cs" />
     <Compile Include="EliminarArticulo.cs" />
@@ -69,10 +68,6 @@
     <Compile Include="FRMmenuPrincipal.Designer.cs">
       <DependentUpon>FRMmenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Imagen.cs" />
-    <Compile Include="ImagenNegocio.cs" />
-    <Compile Include="Marca.cs" />
-    <Compile Include="MarcaNegocio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmListadoMarcas.resx">
@@ -105,6 +100,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dominio\dominio.csproj">
+      <Project>{0d6e008d-3a3f-4b90-a061-bcef53ac7f0d}</Project>
+      <Name>dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\negocio\negocio.csproj">
+      <Project>{abc4180a-6d24-4f72-900b-c6ede6a202ef}</Project>
+      <Name>negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

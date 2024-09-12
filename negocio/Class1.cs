@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
-using dominio;
 
-
-namespace TP2WinFormsG21A
+namespace negocio
 {
-    internal class BuscarArticulo
+    public class Class1
     {
     }
 }

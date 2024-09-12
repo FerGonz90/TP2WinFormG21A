@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP2WinFormsG21A
+namespace dominio
 {
-    internal class Articulo
+    public class Articulo
     {
         public int Codigo { get; set; }
         public string Nombre { get; set; }

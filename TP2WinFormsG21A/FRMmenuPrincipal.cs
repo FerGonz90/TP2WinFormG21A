@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
 
 namespace TP2WinFormsG21A
 {
@@ -85,6 +86,16 @@ namespace TP2WinFormsG21A
         }
 
         private void MSlistarArtículos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CMBmarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXBnomnre_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP2WinFormsG21A
+namespace dominio
 {
-    internal class Marca
+    public class Marca
     {
         public int IdMarca { get; set; }
         public string NombreMarca { get; set; }
