@@ -31,6 +31,8 @@ namespace TP2WinFormsG21A
             listaArticulo = negocio.listar();
             DGVlistaTodosArticulos.DataSource = listaArticulo;
             cargarImagen(listaArticulo[0].Imagen._Imagen);
+            DGVlistaTodosArticulos.Columns["Imagen"].Visible = false;
+            DGVlistaTodosArticulos.Columns["Marca"].Visible = false;
         }
 
         private void DGVlistaTodosArticulos_SelectionChanged(object sender, EventArgs e)
