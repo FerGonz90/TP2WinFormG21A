@@ -68,5 +68,29 @@ namespace TP2WinFormsG21A
                 PTBimagen.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
             }
         }
+
+        private void BTNeliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Seguro que desea eliminar?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(respuesta == DialogResult.Yes)
+                {
+                    ArticuloNegocio negocioArticulo = new ArticuloNegocio();
+                    Articulo seleccionado;
+
+                    seleccionado = (Articulo)DGVlistaTodosArticulos.CurrentRow.DataBoundItem;
+                    negocioArticulo.eliminar(seleccionado.Codigo);
+                    cargar();
+                }
+
+             
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

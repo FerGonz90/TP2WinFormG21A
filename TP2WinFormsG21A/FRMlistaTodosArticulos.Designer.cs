@@ -74,6 +74,7 @@
             this.BTNeliminar.TabIndex = 3;
             this.BTNeliminar.Text = "Eliminar";
             this.BTNeliminar.UseVisualStyleBackColor = true;
+            this.BTNeliminar.Click += new System.EventHandler(this.BTNeliminar_Click);
             // 
             // FRMlistaTodosArticulos
             // 
