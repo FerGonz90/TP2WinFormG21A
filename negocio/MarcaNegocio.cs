@@ -13,25 +13,18 @@ namespace negocio
         public List<Marca> listar()
         {
             List<Marca> lista = new List<Marca>();
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
+            AccesoDatos datosMarca = new AccesoDatos();
 
             try
             {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select Id, Descripcion from MARCAS";
-                comando.Connection = conexion;
-
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                datosMarca.setearConsulta("Select Id, Descripcion from MARCAS");
+                datosMarca.ejecutarLectura();
+                
+                while (datosMarca.Lector.Read())
                 {
                     Marca aux = new Marca();
-                    aux.IdMarca = (int)lector["Id"];
-                    aux.NombreMarca = (string)lector["Descripcion"];
+                    aux.IdMarca = (int)datosMarca.Lector["Id"];
+                    aux.NombreMarca = (string)datosMarca.Lector["Descripcion"];
 
                     lista.Add(aux);
                 }
@@ -45,7 +38,7 @@ namespace negocio
             }
 
             finally
-            { conexion.Close(); }
+            { datosMarca.cerrarConexion(); }
         }
     }
 }

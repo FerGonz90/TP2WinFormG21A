@@ -75,6 +75,44 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-        
+
+        public List<Articulo> ArtFiltroMarca(int marcaId)
+        {
+            List<Articulo> filtroMarca = new List<Articulo>();
+            AccesoDatos datos2 = new AccesoDatos();
+
+            try
+            {
+                datos2.setearConsulta("select A.Id, Codigo, Nombre, A.Descripcion, IdMarca, IdCategoria, Precio, I.IdArticulo, ImagenUrl From ARTICULOS A, IMAGENES I WHERE A.Id = I.IdArticulo and A.IdMarca = @MarcaId");
+                datos2.setearParametro("@MarcaId", marcaId);
+                datos2.ejecutarLectura();
+
+                while (datos2.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Codigo = (string)datos2.Lector["Codigo"];
+                    aux.Nombre = (string)datos2.Lector["Nombre"];
+                    aux.Descripcion = (string)datos2.Lector["Descripcion"];
+                    aux.Precio = (decimal)datos2.Lector["Precio"];
+                    aux.Imagen = new Imagen();
+                    aux.Imagen.Id = (int)datos2.Lector["Id"];
+                    aux.Imagen._Imagen = (string)datos2.Lector["ImagenUrl"];
+
+                    filtroMarca.Add(aux);
+                }
+
+                return filtroMarca;
+            }
+
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+
+            finally
+            {
+                datos2.cerrarConexion();
+            }
+        }
     }
 }

@@ -26,8 +26,7 @@ namespace TP2WinFormsG21A
 
         private void cbxListMarcas_DropDown(object sender, EventArgs e)
         {
-            cbxListMarcas.Items.Clear();
-
+            
             CargarMarcas();
         }
 
@@ -36,10 +35,18 @@ namespace TP2WinFormsG21A
             MarcaNegocio marcaNegocio = new MarcaNegocio();
             List<Marca> listaMarcas = marcaNegocio.listar();
 
-            foreach (Marca marca in listaMarcas)
-            {
-                cbxListMarcas.Items.Add(marca.NombreMarca);
-            }
+            cbxListMarcas.DataSource = listaMarcas;
+            cbxListMarcas.DisplayMember = "NombreMarca";
+            cbxListMarcas.ValueMember = "IdMarca";
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            int marcaId = (int)cbxListMarcas.SelectedValue;
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            List<Articulo> articulos = articuloNegocio.ArtFiltroMarca(marcaId);
+
+            dgvListArtPorMarca.DataSource = articulos;
         }
     }
 }
