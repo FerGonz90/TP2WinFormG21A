@@ -30,6 +30,8 @@
         {
             this.DGVlistaTodosArticulos = new System.Windows.Forms.DataGridView();
             this.PTBimagen = new System.Windows.Forms.PictureBox();
+            this.BTNmodificar = new System.Windows.Forms.Button();
+            this.BTNeliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVlistaTodosArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).BeginInit();
             this.SuspendLayout();
@@ -55,11 +57,31 @@
             this.PTBimagen.TabIndex = 1;
             this.PTBimagen.TabStop = false;
             // 
+            // BTNmodificar
+            // 
+            this.BTNmodificar.Location = new System.Drawing.Point(176, 248);
+            this.BTNmodificar.Name = "BTNmodificar";
+            this.BTNmodificar.Size = new System.Drawing.Size(91, 39);
+            this.BTNmodificar.TabIndex = 2;
+            this.BTNmodificar.Text = "Modificar";
+            this.BTNmodificar.UseVisualStyleBackColor = true;
+            // 
+            // BTNeliminar
+            // 
+            this.BTNeliminar.Location = new System.Drawing.Point(403, 248);
+            this.BTNeliminar.Name = "BTNeliminar";
+            this.BTNeliminar.Size = new System.Drawing.Size(91, 39);
+            this.BTNeliminar.TabIndex = 3;
+            this.BTNeliminar.Text = "Eliminar";
+            this.BTNeliminar.UseVisualStyleBackColor = true;
+            // 
             // FRMlistaTodosArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 365);
+            this.Controls.Add(this.BTNeliminar);
+            this.Controls.Add(this.BTNmodificar);
             this.Controls.Add(this.PTBimagen);
             this.Controls.Add(this.DGVlistaTodosArticulos);
             this.Name = "FRMlistaTodosArticulos";
@@ -75,5 +97,7 @@
 
         private System.Windows.Forms.DataGridView DGVlistaTodosArticulos;
         private System.Windows.Forms.PictureBox PTBimagen;
+        private System.Windows.Forms.Button BTNmodificar;
+        private System.Windows.Forms.Button BTNeliminar;
     }
 }
