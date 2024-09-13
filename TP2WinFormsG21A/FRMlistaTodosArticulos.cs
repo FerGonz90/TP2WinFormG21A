@@ -27,18 +27,31 @@ namespace TP2WinFormsG21A
 
         private void FRMlistaTodosArticulos_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulo = negocio.listar();
-            DGVlistaTodosArticulos.DataSource = listaArticulo;
-            cargarImagen(listaArticulo[0].Imagen._Imagen);
-            DGVlistaTodosArticulos.Columns["Imagen"].Visible = false;
-            DGVlistaTodosArticulos.Columns["Marca"].Visible = false;
+            cargar();
         }
 
         private void DGVlistaTodosArticulos_SelectionChanged(object sender, EventArgs e)
         {
             Articulo seleccionado = (Articulo)DGVlistaTodosArticulos.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.Imagen._Imagen);
+        }
+
+        private void cargar()
+        {
+            try
+            {
+                ArticuloNegocio negocio = new ArticuloNegocio();
+                listaArticulo = negocio.listar();
+                DGVlistaTodosArticulos.DataSource = listaArticulo;
+                cargarImagen(listaArticulo[0].Imagen._Imagen);
+                DGVlistaTodosArticulos.Columns["Imagen"].Visible = false;
+                DGVlistaTodosArticulos.Columns["Marca"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         private void cargarImagen(string imagen)

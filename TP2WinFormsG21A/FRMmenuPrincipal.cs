@@ -66,18 +66,7 @@ namespace TP2WinFormsG21A
 
         private void FRMmenuPrincipal_Load(object sender, EventArgs e)
         {
-            MarcaNegocio negocioMarca = new MarcaNegocio();
-            CategoriaNegocio negocioCategoria = new CategoriaNegocio();
-            try
-            {
-                CMBmarca.DataSource = negocioMarca.listar();
-                CMBcategoria.DataSource = negocioCategoria.listar();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.ToString());
-            }
+            cargar();
         }
 
         private void porMarcaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -125,6 +114,22 @@ namespace TP2WinFormsG21A
             CargarMarcas();
         }
 
+        private void cargar()
+        {
+            MarcaNegocio negocioMarca = new MarcaNegocio();
+            CategoriaNegocio negocioCategoria = new CategoriaNegocio();
+            try
+            {
+                CMBmarca.DataSource = negocioMarca.listar();
+                CMBcategoria.DataSource = negocioCategoria.listar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         private void CargarMarcas()
         {
             MarcaNegocio marcaNegocio = new MarcaNegocio();
@@ -149,15 +154,36 @@ namespace TP2WinFormsG21A
                 articulo.Precio = decimal.Parse(TXBprecio.Text);
                 articulo.Marca = (Marca)CMBmarca.SelectedItem;
                 articulo.Categoria = (Categoria)CMBcategoria.SelectedItem;
+                articulo.Imagen = new Imagen();
+                articulo.Imagen._Imagen = TXBcargarImagen.Text;
 
                 negocioArticulo.agregar(articulo);
                 MessageBox.Show("Articulo agregado");
+                cargar();
                 
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void TXBcargarImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(TXBcargarImagen.Text);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                PTBimagen.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                PTBimagen.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
             }
         }
     }
