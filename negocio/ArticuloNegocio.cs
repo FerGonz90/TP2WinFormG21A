@@ -27,8 +27,8 @@ namespace negocio
                     aux.Codigo = (string)datosArticulo.Lector["Codigo"];
                     aux.Nombre = (string)datosArticulo.Lector["Nombre"];
                     aux.Descripcion = (string)datosArticulo.Lector["Descripcion"];
-                    //aux.Marca = new Marca();
-                    //aux.Marca.IdMarca = (int)datosArticulo.Lector["IdMarca"];
+                   /// aux.Marca = new Marca();
+                   /// aux.Marca.IdMarca = (int)datosArticulo.Lector["IdMarca"];
                     //aux.Categoria = (int)datosArticulo.Lector["IdCategoria"];
                     aux.Precio = (decimal)datosArticulo.Lector["Precio"];
                     aux.Imagen = new Imagen();
@@ -75,7 +75,6 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-
         public List<Articulo> ArtFiltroMarca(int marcaId)
         {
             List<Articulo> filtroMarca = new List<Articulo>();
@@ -112,6 +111,21 @@ namespace negocio
             finally
             {
                 datos2.cerrarConexion();
+            }
+        }
+        public void eliminar(string codigo)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("delete from ARTICULOS where Codigo = @codigo");
+                datos.setearParametro("@codigo", codigo);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

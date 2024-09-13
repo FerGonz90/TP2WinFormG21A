@@ -45,7 +45,9 @@ namespace TP2WinFormsG21A
                 DGVlistaTodosArticulos.DataSource = listaArticulo;
                 cargarImagen(listaArticulo[0].Imagen._Imagen);
                 DGVlistaTodosArticulos.Columns["Imagen"].Visible = false;
+                DGVlistaTodosArticulos.Columns["Categoria"].Visible = false;
                 DGVlistaTodosArticulos.Columns["Marca"].Visible = false;
+
             }
             catch (Exception ex)
             {
@@ -64,6 +66,30 @@ namespace TP2WinFormsG21A
             {
 
                 PTBimagen.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
+            }
+        }
+
+        private void BTNeliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Seguro que desea eliminar?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(respuesta == DialogResult.Yes)
+                {
+                    ArticuloNegocio negocioArticulo = new ArticuloNegocio();
+                    Articulo seleccionado;
+
+                    seleccionado = (Articulo)DGVlistaTodosArticulos.CurrentRow.DataBoundItem;
+                    negocioArticulo.eliminar(seleccionado.Codigo);
+                    cargar();
+                }
+
+             
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
             }
         }
     }
