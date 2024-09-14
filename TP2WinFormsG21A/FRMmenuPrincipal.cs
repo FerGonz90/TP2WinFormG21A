@@ -179,8 +179,12 @@ namespace TP2WinFormsG21A
 
                 negocioArticulo.agregar(articulo);
                 MessageBox.Show("Articulo agregado");
-                cargar();
-                
+                TXBcodigo.Text = string.Empty;
+                TXBnomnre.Text = string.Empty;
+                TXBdescripcion.Text = string.Empty;
+                TXBprecio.Text = string.Empty;
+                TXBcargarImagen.Text = string.Empty;
+
             }
             catch (Exception ex)
             {
