@@ -26,10 +26,7 @@ namespace negocio
                     Articulo aux = new Articulo();
                     aux.Codigo = (string)datosArticulo.Lector["Codigo"];
                     aux.Nombre = (string)datosArticulo.Lector["Nombre"];
-                    aux.Descripcion = (string)datosArticulo.Lector["Descripcion"];
-                   /// aux.Marca = new Marca();
-                   /// aux.Marca.IdMarca = (int)datosArticulo.Lector["IdMarca"];
-                    //aux.Categoria = (int)datosArticulo.Lector["IdCategoria"];
+                    aux.Descripcion = (string)datosArticulo.Lector["Descripcion"];                   
                     aux.Precio = (decimal)datosArticulo.Lector["Precio"];
                     aux.Imagen = new Imagen();
                     aux.Imagen.Id = (int)datosArticulo.Lector["Id"];
@@ -52,6 +49,53 @@ namespace negocio
                 datosArticulo.cerrarConexion();
             }
         
+        }
+
+        public List<Articulo> listarDetalle()
+        {
+            List<Articulo> listaArticulo = new List<Articulo>();
+            AccesoDatos datosArticulo = new AccesoDatos();
+            try
+            {
+                datosArticulo.setearConsulta("SELECT A.Id AS 'ArticuloId', Codigo, Nombre, M.Descripcion AS 'MarcaDescripcion', C.Descripcion AS 'CategoriaDescripcion', A.Descripcion AS 'ArticuloDescripcion', IdMarca, IdCategoria, Precio, C.Id AS 'CategoriaId', I.Id AS 'ImagenId', I.IdArticulo AS 'ImagenIdArticulo', ImagenUrl,  M.Id AS 'MarcaId' FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id  JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE a.Id = 3");
+                datosArticulo.ejecutarLectura();
+
+                while (datosArticulo.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Marca = new Marca();
+                    aux.Imagen = new Imagen();
+                    aux.Categoria = new Categoria();
+                    aux.Id = (int)datosArticulo.Lector["ArticuloId"];
+                    aux.Codigo = (string)datosArticulo.Lector["Codigo"];
+                    aux.Nombre = (string)datosArticulo.Lector["Nombre"];
+                    aux.Marca.NombreMarca = (string)datosArticulo.Lector["MarcaDescripcion"];
+                    aux.Categoria.DescripcionCat = (string)datosArticulo.Lector["CategoriaDescripcion"];
+                    aux.Descripcion = (string)datosArticulo.Lector["ArticuloDescripcion"];
+                    aux.Marca.IdMarca = (int)datosArticulo.Lector["IdMarca"];
+                    aux.Categoria.IdCat = (int)datosArticulo.Lector["IdCategoria"];
+                    aux.Precio = (decimal)datosArticulo.Lector["Precio"];
+                    aux.Imagen.Id = (int)datosArticulo.Lector["ImagenId"];
+                    aux.Imagen.IdArticulo = (int)datosArticulo.Lector["ImagenIdArticulo"];
+                    aux.Imagen.ImagenUrl = (string)datosArticulo.Lector["ImagenUrl"];
+
+
+                    listaArticulo.Add(aux);
+                }
+
+
+                return listaArticulo;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+
+            finally
+            {
+                datosArticulo.cerrarConexion();
+            }
         }
 
         public void agregar (Articulo nuevoArticulo)

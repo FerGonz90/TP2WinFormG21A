@@ -32,6 +32,7 @@
             this.PTBimagen = new System.Windows.Forms.PictureBox();
             this.BTNmodificar = new System.Windows.Forms.Button();
             this.BTNeliminar = new System.Windows.Forms.Button();
+            this.btnVerDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVlistaTodosArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             // BTNmodificar
             // 
-            this.BTNmodificar.Location = new System.Drawing.Point(176, 248);
+            this.BTNmodificar.Location = new System.Drawing.Point(33, 248);
             this.BTNmodificar.Name = "BTNmodificar";
             this.BTNmodificar.Size = new System.Drawing.Size(91, 39);
             this.BTNmodificar.TabIndex = 2;
@@ -68,7 +69,7 @@
             // 
             // BTNeliminar
             // 
-            this.BTNeliminar.Location = new System.Drawing.Point(403, 248);
+            this.BTNeliminar.Location = new System.Drawing.Point(199, 248);
             this.BTNeliminar.Name = "BTNeliminar";
             this.BTNeliminar.Size = new System.Drawing.Size(91, 39);
             this.BTNeliminar.TabIndex = 3;
@@ -76,16 +77,28 @@
             this.BTNeliminar.UseVisualStyleBackColor = true;
             this.BTNeliminar.Click += new System.EventHandler(this.BTNeliminar_Click);
             // 
+            // btnVerDetalle
+            // 
+            this.btnVerDetalle.Location = new System.Drawing.Point(358, 248);
+            this.btnVerDetalle.Name = "btnVerDetalle";
+            this.btnVerDetalle.Size = new System.Drawing.Size(91, 39);
+            this.btnVerDetalle.TabIndex = 4;
+            this.btnVerDetalle.Text = "Ver detalle";
+            this.btnVerDetalle.UseVisualStyleBackColor = true;
+            this.btnVerDetalle.Click += new System.EventHandler(this.btnVerDetalle_Click);
+            // 
             // FRMlistaTodosArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 365);
+            this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.BTNeliminar);
             this.Controls.Add(this.BTNmodificar);
             this.Controls.Add(this.PTBimagen);
             this.Controls.Add(this.DGVlistaTodosArticulos);
             this.Name = "FRMlistaTodosArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de todos los articulos";
             this.Load += new System.EventHandler(this.FRMlistaTodosArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVlistaTodosArticulos)).EndInit();
@@ -100,5 +113,6 @@
         private System.Windows.Forms.PictureBox PTBimagen;
         private System.Windows.Forms.Button BTNmodificar;
         private System.Windows.Forms.Button BTNeliminar;
+        private System.Windows.Forms.Button btnVerDetalle;
     }
 }

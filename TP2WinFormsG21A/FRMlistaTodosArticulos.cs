@@ -92,5 +92,11 @@ namespace TP2WinFormsG21A
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            frmDetalle ventanaDetalle = new frmDetalle();
+            ventanaDetalle.ShowDialog();
+        }
     }
 }
