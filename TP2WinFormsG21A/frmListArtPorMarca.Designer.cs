@@ -66,10 +66,13 @@
             // 
             // cbxListMarcas
             // 
+            this.cbxListMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxListMarcas.FormattingEnabled = true;
             this.cbxListMarcas.Location = new System.Drawing.Point(228, 32);
+            this.cbxListMarcas.MaxDropDownItems = 18;
             this.cbxListMarcas.Name = "cbxListMarcas";
             this.cbxListMarcas.Size = new System.Drawing.Size(121, 28);
+            this.cbxListMarcas.Sorted = true;
             this.cbxListMarcas.TabIndex = 4;
             this.cbxListMarcas.DropDown += new System.EventHandler(this.cbxListMarcas_DropDown);
             // 

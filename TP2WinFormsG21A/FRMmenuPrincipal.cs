@@ -66,7 +66,7 @@ namespace TP2WinFormsG21A
 
         private void FRMmenuPrincipal_Load(object sender, EventArgs e)
         {
-            cargar();
+            cargar();  
         }
 
         private void porMarcaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,15 +109,46 @@ namespace TP2WinFormsG21A
 
         private void CMBmarca_DropDown(object sender, EventArgs e)
         {
-            ///CMBmarca.Items.Clear();
-
-            CargarMarcas();
+            //cargarMarca();
         }
+        private void CMBcategoria_DropDown(object sender, EventArgs e)
+        {
+            //cargarCategoria();
+        }
+
+        /*private void cargarMarca()
+        {
+            MarcaNegocio negocioMarca = new MarcaNegocio();
+            try
+            {
+                CMBmarca.DataSource = negocioMarca.listar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void cargarCategoria()
+        {
+            CategoriaNegocio negocioCategoria = new CategoriaNegocio();
+            try
+            {
+                CMBcategoria.DataSource = negocioCategoria.listar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }*/
 
         private void cargar()
         {
             MarcaNegocio negocioMarca = new MarcaNegocio();
             CategoriaNegocio negocioCategoria = new CategoriaNegocio();
+
             try
             {
                 CMBmarca.DataSource = negocioMarca.listar();
@@ -127,17 +158,6 @@ namespace TP2WinFormsG21A
             {
 
                 MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void CargarMarcas()
-        {
-            MarcaNegocio marcaNegocio = new MarcaNegocio();
-            List<Marca> listaMarcas = marcaNegocio.listar();
-
-            foreach (Marca marca in listaMarcas)
-            {
-                ///CMBmarca.Items.Add(marca.NombreMarca);
             }
         }
 
@@ -185,6 +205,18 @@ namespace TP2WinFormsG21A
 
                 PTBimagen.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
             }
+        }
+
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAgregarMarca ventanaAgregarMarca = new frmAgregarMarca();
+            ventanaAgregarMarca.ShowDialog();
+        }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAgregarCategoria ventanaAgregarCategoria = new frmAgregarCategoria();
+            ventanaAgregarCategoria.ShowDialog();
         }
     }
 }
