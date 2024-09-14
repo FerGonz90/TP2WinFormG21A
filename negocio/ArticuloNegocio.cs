@@ -33,7 +33,7 @@ namespace negocio
                     aux.Precio = (decimal)datosArticulo.Lector["Precio"];
                     aux.Imagen = new Imagen();
                     aux.Imagen.Id = (int)datosArticulo.Lector["Id"];
-                    aux.Imagen._Imagen = (string)datosArticulo.Lector["ImagenUrl"];
+                    aux.Imagen.ImagenUrl = (string)datosArticulo.Lector["ImagenUrl"];
 
                     listaArticulo.Add(aux);
                 }
@@ -54,16 +54,26 @@ namespace negocio
         
         }
 
-        public void agregar (Articulo nuevo)
+        public void agregar (Articulo nuevoArticulo)
         {
             AccesoDatos datos = new AccesoDatos();
+         
             try
             {
-                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria, ImagenUrl) values (" + nuevo.Codigo + ", '" + nuevo.Nombre + "','" + nuevo.Descripcion + "'," + nuevo.Precio + ", @IdMarca, @IdCategoria, @ImagenUrl)");
-                datos.setearParametro("@IdMarca", nuevo.Marca.IdMarca);
-                datos.setearParametro("@Idcategoria", nuevo.Categoria.IdCat);
-                datos.setearParametro("@ImagenUrl", nuevo.Imagen._Imagen);
+                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) values ('" + nuevoArticulo.Codigo + "', '" + nuevoArticulo.Nombre + "','" + nuevoArticulo.Descripcion + "'," + nuevoArticulo.Precio + ", @IdMarca, @IdCategoria)");
+                datos.setearParametro("@IdMarca", nuevoArticulo.Marca.IdMarca);
+                datos.setearParametro("@Idcategoria", nuevoArticulo.Categoria.IdCat);
                 datos.ejecutarAccion();
+
+                //datos.setearConsulta("select Id From ARTICULOS A WHERE Codigo = '" + nuevoArticulo.Codigo + "'");
+                //Imagen aux = new Imagen();
+                //aux.IdArticulo = (int)datos.Lector["Id"];
+                //datos.ejecutarAccion();
+                //
+                //datos.setearConsulta("insert into IMAGENES (IdArticulo, ImagenUrl) values (@IdArticulo, @ImagenUrl)");
+                //datos.setearParametro("@ImagenUrl", nuevoArticulo.Imagen.ImagenUrl);
+                //datos.setearParametro("@IdArticulo", aux.IdArticulo);
+                //datos.ejecutarAccion();
             }
             catch (Exception ex)
             {
@@ -95,7 +105,7 @@ namespace negocio
                     aux.Precio = (decimal)datos2.Lector["Precio"];
                     aux.Imagen = new Imagen();
                     aux.Imagen.Id = (int)datos2.Lector["Id"];
-                    aux.Imagen._Imagen = (string)datos2.Lector["ImagenUrl"];
+                    aux.Imagen.ImagenUrl = (string)datos2.Lector["ImagenUrl"];
 
                     filtroMarca.Add(aux);
                 }
