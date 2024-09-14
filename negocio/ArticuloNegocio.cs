@@ -63,17 +63,33 @@ namespace negocio
                 datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) values ('" + nuevoArticulo.Codigo + "', '" + nuevoArticulo.Nombre + "','" + nuevoArticulo.Descripcion + "'," + nuevoArticulo.Precio + ", @IdMarca, @IdCategoria)");
                 datos.setearParametro("@IdMarca", nuevoArticulo.Marca.IdMarca);
                 datos.setearParametro("@Idcategoria", nuevoArticulo.Categoria.IdCat);
-                datos.ejecutarAccion();
+                datos.ejecutarAccion();                
+                                
+            }
+            catch (Exception ex)
+            {
 
-                //datos.setearConsulta("select Id From ARTICULOS A WHERE Codigo = '" + nuevoArticulo.Codigo + "'");
-                //Imagen aux = new Imagen();
-                //aux.IdArticulo = (int)datos.Lector["Id"];
-                //datos.ejecutarAccion();
-                //
-                //datos.setearConsulta("insert into IMAGENES (IdArticulo, ImagenUrl) values (@IdArticulo, @ImagenUrl)");
-                //datos.setearParametro("@ImagenUrl", nuevoArticulo.Imagen.ImagenUrl);
-                //datos.setearParametro("@IdArticulo", aux.IdArticulo);
-                //datos.ejecutarAccion();
+                throw ex;
+            }
+            finally
+            {                
+                    datos.cerrarConexion();
+                                
+            }
+            Articulo aux = new Articulo();
+            aux.Imagen = new Imagen();
+            try
+            {
+                datos.abrirConexion();
+                datos.setearConsulta("select Id From ARTICULOS A WHERE Codigo = '" + nuevoArticulo.Codigo + "'");
+                datos.ejecutarLectura();
+                
+                if (datos.Lector.Read())
+                {
+                    aux.Imagen.IdArticulo = (int)datos.Lector["Id"];
+                    //datos.ejecutarAccion();
+                }              
+
             }
             catch (Exception ex)
             {
@@ -83,6 +99,26 @@ namespace negocio
             finally
             {
                 datos.cerrarConexion();
+
+            }
+
+            try
+            {
+                datos.abrirConexion();
+                datos.setearConsulta("insert into IMAGENES (IdArticulo, ImagenUrl) values (@IdArticulo, @ImagenUrl)");
+                datos.setearParametro("@IdArticulo", aux.Imagen.IdArticulo );
+                datos.setearParametro("@ImagenUrl", nuevoArticulo.Imagen.ImagenUrl);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
             }
         }
         public List<Articulo> ArtFiltroMarca(int marcaId)
