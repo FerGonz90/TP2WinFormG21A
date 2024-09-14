@@ -33,7 +33,7 @@ namespace TP2WinFormsG21A
         private void DGVlistaTodosArticulos_SelectionChanged(object sender, EventArgs e)
         {
             Articulo seleccionado = (Articulo)DGVlistaTodosArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.Imagen._Imagen);
+            cargarImagen(seleccionado.Imagen.ImagenUrl);
         }
 
         private void cargar()
@@ -43,7 +43,7 @@ namespace TP2WinFormsG21A
                 ArticuloNegocio negocio = new ArticuloNegocio();
                 listaArticulo = negocio.listar();
                 DGVlistaTodosArticulos.DataSource = listaArticulo;
-                cargarImagen(listaArticulo[0].Imagen._Imagen);
+                cargarImagen(listaArticulo[0].Imagen.ImagenUrl);
                 DGVlistaTodosArticulos.Columns["Imagen"].Visible = false;
                 DGVlistaTodosArticulos.Columns["Categoria"].Visible = false;
                 DGVlistaTodosArticulos.Columns["Marca"].Visible = false;

@@ -175,7 +175,7 @@ namespace TP2WinFormsG21A
                 articulo.Marca = (Marca)CMBmarca.SelectedItem;
                 articulo.Categoria = (Categoria)CMBcategoria.SelectedItem;
                 articulo.Imagen = new Imagen();
-                articulo.Imagen._Imagen = TXBcargarImagen.Text;
+                articulo.Imagen.ImagenUrl = TXBcargarImagen.Text;
 
                 negocioArticulo.agregar(articulo);
                 MessageBox.Show("Articulo agregado");
