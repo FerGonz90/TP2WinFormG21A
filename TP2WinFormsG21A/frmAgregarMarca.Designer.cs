@@ -31,16 +31,18 @@
             this.btnAgregarMarca = new System.Windows.Forms.Button();
             this.tbxMarca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAgregarMarca
             // 
             this.btnAgregarMarca.Location = new System.Drawing.Point(316, 205);
             this.btnAgregarMarca.Name = "btnAgregarMarca";
-            this.btnAgregarMarca.Size = new System.Drawing.Size(157, 45);
+            this.btnAgregarMarca.Size = new System.Drawing.Size(157, 48);
             this.btnAgregarMarca.TabIndex = 0;
             this.btnAgregarMarca.Text = "AGREGAR";
             this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
             // 
             // tbxMarca
             // 
@@ -58,11 +60,22 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Nombre de la Marca:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(316, 299);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(157, 48);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmAgregarMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 478);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxMarca);
             this.Controls.Add(this.btnAgregarMarca);
@@ -78,5 +91,6 @@
         private System.Windows.Forms.Button btnAgregarMarca;
         private System.Windows.Forms.TextBox tbxMarca;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

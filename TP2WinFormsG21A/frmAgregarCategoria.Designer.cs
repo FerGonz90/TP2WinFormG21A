@@ -28,44 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAgregarMarca = new System.Windows.Forms.Button();
-            this.tbxMarca = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnAgregarCategoria = new System.Windows.Forms.Button();
+            this.tbxCategoria = new System.Windows.Forms.TextBox();
+            this.lblNombraCategoria = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnAgregarMarca
+            // btnAgregarCategoria
             // 
-            this.btnAgregarMarca.Location = new System.Drawing.Point(316, 205);
-            this.btnAgregarMarca.Name = "btnAgregarMarca";
-            this.btnAgregarMarca.Size = new System.Drawing.Size(157, 45);
-            this.btnAgregarMarca.TabIndex = 0;
-            this.btnAgregarMarca.Text = "AGREGAR";
-            this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(316, 205);
+            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(157, 45);
+            this.btnAgregarCategoria.TabIndex = 0;
+            this.btnAgregarCategoria.Text = "AGREGAR";
+            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
-            // tbxMarca
+            // tbxCategoria
             // 
-            this.tbxMarca.Location = new System.Drawing.Point(316, 111);
-            this.tbxMarca.Name = "tbxMarca";
-            this.tbxMarca.Size = new System.Drawing.Size(157, 26);
-            this.tbxMarca.TabIndex = 1;
+            this.tbxCategoria.Location = new System.Drawing.Point(316, 111);
+            this.tbxCategoria.Name = "tbxCategoria";
+            this.tbxCategoria.Size = new System.Drawing.Size(157, 26);
+            this.tbxCategoria.TabIndex = 1;
             // 
-            // label1
+            // lblNombraCategoria
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(130, 114);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nombre de la Categoria:";
+            this.lblNombraCategoria.AutoSize = true;
+            this.lblNombraCategoria.Location = new System.Drawing.Point(130, 114);
+            this.lblNombraCategoria.Name = "lblNombraCategoria";
+            this.lblNombraCategoria.Size = new System.Drawing.Size(180, 20);
+            this.lblNombraCategoria.TabIndex = 2;
+            this.lblNombraCategoria.Text = "Nombre de la Categoria:";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(316, 284);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(157, 44);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmAgregarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 478);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbxMarca);
-            this.Controls.Add(this.btnAgregarMarca);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.lblNombraCategoria);
+            this.Controls.Add(this.tbxCategoria);
+            this.Controls.Add(this.btnAgregarCategoria);
             this.Name = "frmAgregarCategoria";
             this.Text = "Nueva Categoria";
             this.ResumeLayout(false);
@@ -75,8 +88,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAgregarMarca;
-        private System.Windows.Forms.TextBox tbxMarca;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAgregarCategoria;
+        private System.Windows.Forms.TextBox tbxCategoria;
+        private System.Windows.Forms.Label lblNombraCategoria;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

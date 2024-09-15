@@ -55,6 +55,7 @@
             this.porCategoríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.listarMarcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarCategoríasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GBXagregar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBimagen)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -84,7 +85,7 @@
             this.GBXagregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GBXagregar.Name = "GBXagregar";
             this.GBXagregar.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GBXagregar.Size = new System.Drawing.Size(404, 722);
+            this.GBXagregar.Size = new System.Drawing.Size(514, 722);
             this.GBXagregar.TabIndex = 4;
             this.GBXagregar.TabStop = false;
             this.GBXagregar.Text = "Agregar artículo";
@@ -319,10 +320,11 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modificarArtículosToolStripMenuItem,
             this.MSlistarArtículos,
-            this.listarMarcasToolStripMenuItem});
+            this.listarMarcasToolStripMenuItem,
+            this.listarCategoríasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(435, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(637, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "MSTopciones";
             // 
@@ -333,12 +335,19 @@
             this.listarMarcasToolStripMenuItem.Text = "Listar marcas";
             this.listarMarcasToolStripMenuItem.Click += new System.EventHandler(this.listarMarcasToolStripMenuItem_Click);
             // 
+            // listarCategoríasToolStripMenuItem
+            // 
+            this.listarCategoríasToolStripMenuItem.Name = "listarCategoríasToolStripMenuItem";
+            this.listarCategoríasToolStripMenuItem.Size = new System.Drawing.Size(155, 29);
+            this.listarCategoríasToolStripMenuItem.Text = "Listar categorías";
+            this.listarCategoríasToolStripMenuItem.Click += new System.EventHandler(this.listarCategoríasToolStripMenuItem_Click);
+            // 
             // FRMmenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(435, 806);
+            this.ClientSize = new System.Drawing.Size(637, 806);
             this.Controls.Add(this.GBXagregar);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -384,6 +393,7 @@
         private System.Windows.Forms.ToolStripMenuItem todosLosArtículosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarMarcasToolStripMenuItem;
         private System.Windows.Forms.Button btnAgregarArticulo;
+        private System.Windows.Forms.ToolStripMenuItem listarCategoríasToolStripMenuItem;
     }
 }
 

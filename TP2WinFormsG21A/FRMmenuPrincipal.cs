@@ -222,5 +222,11 @@ namespace TP2WinFormsG21A
             frmAgregarCategoria ventanaAgregarCategoria = new frmAgregarCategoria();
             ventanaAgregarCategoria.ShowDialog();
         }
+
+        private void listarCategoríasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoCategorias ventanaListadoCategorias = new frmListadoCategorias();
+            ventanaListadoCategorias.ShowDialog();
+        }
     }
 }
