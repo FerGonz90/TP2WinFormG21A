@@ -95,7 +95,12 @@ namespace TP2WinFormsG21A
 
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
-            frmDetalle ventanaDetalle = new frmDetalle();
+            ArticuloNegocio negocioArticulo = new ArticuloNegocio();
+            Articulo seleccionado;
+
+            seleccionado = (Articulo)DGVlistaTodosArticulos.CurrentRow.DataBoundItem;
+            
+            frmDetalle ventanaDetalle = new frmDetalle(seleccionado.Id, seleccionado.Imagen.ImagenUrl);
             ventanaDetalle.ShowDialog();
         }
     }

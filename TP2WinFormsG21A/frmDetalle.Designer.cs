@@ -41,14 +41,15 @@
             this.dgvDetallesArticulos.Location = new System.Drawing.Point(12, 12);
             this.dgvDetallesArticulos.Name = "dgvDetallesArticulos";
             this.dgvDetallesArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetallesArticulos.Size = new System.Drawing.Size(1082, 242);
+            this.dgvDetallesArticulos.Size = new System.Drawing.Size(1082, 100);
             this.dgvDetallesArticulos.TabIndex = 1;
             // 
             // ptbImagenDetalle
             // 
-            this.ptbImagenDetalle.Location = new System.Drawing.Point(415, 260);
+            this.ptbImagenDetalle.Location = new System.Drawing.Point(362, 131);
             this.ptbImagenDetalle.Name = "ptbImagenDetalle";
-            this.ptbImagenDetalle.Size = new System.Drawing.Size(239, 228);
+            this.ptbImagenDetalle.Size = new System.Drawing.Size(353, 337);
+            this.ptbImagenDetalle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbImagenDetalle.TabIndex = 2;
             this.ptbImagenDetalle.TabStop = false;
             // 
@@ -56,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 519);
+            this.ClientSize = new System.Drawing.Size(1106, 480);
             this.Controls.Add(this.ptbImagenDetalle);
             this.Controls.Add(this.dgvDetallesArticulos);
             this.Name = "frmDetalle";

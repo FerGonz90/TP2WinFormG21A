@@ -18,18 +18,19 @@ namespace negocio
 
             try
             {
-                datosArticulo.setearConsulta("select A.Id, Codigo, Nombre, A.Descripcion, IdMarca, IdCategoria, Precio, I.IdArticulo, ImagenUrl From ARTICULOS A, IMAGENES I WHERE A.Id = I.IdArticulo");
+                datosArticulo.setearConsulta("select distinct A.Id AS 'ArticuloId', Codigo, Nombre, A.Descripcion, IdMarca, IdCategoria, Precio,(select top 1 ImagenUrl from IMAGENES where IdArticulo = A.Id)AS 'ImagenUrl'  From ARTICULOS A\r\n");
                 datosArticulo.ejecutarLectura();
 
                 while (datosArticulo.Lector.Read())
                 {
                     Articulo aux = new Articulo();
+                    aux.Id = (int)datosArticulo.Lector["ArticuloId"];
                     aux.Codigo = (string)datosArticulo.Lector["Codigo"];
                     aux.Nombre = (string)datosArticulo.Lector["Nombre"];
                     aux.Descripcion = (string)datosArticulo.Lector["Descripcion"];                   
                     aux.Precio = (decimal)datosArticulo.Lector["Precio"];
-                    aux.Imagen = new Imagen();
-                    aux.Imagen.Id = (int)datosArticulo.Lector["Id"];
+                    aux.Imagen = new Imagen();                   
+                    aux.Imagen.Id = (int)datosArticulo.Lector["ArticuloId"];
                     aux.Imagen.ImagenUrl = (string)datosArticulo.Lector["ImagenUrl"];
 
                     listaArticulo.Add(aux);
@@ -51,13 +52,16 @@ namespace negocio
         
         }
 
-        public List<Articulo> listarDetalle()
+
+        public List<Articulo> listarDetalle(int Id)
         {
             List<Articulo> listaArticulo = new List<Articulo>();
             AccesoDatos datosArticulo = new AccesoDatos();
+
             try
             {
-                datosArticulo.setearConsulta("SELECT A.Id AS 'ArticuloId', Codigo, Nombre, M.Descripcion AS 'MarcaDescripcion', C.Descripcion AS 'CategoriaDescripcion', A.Descripcion AS 'ArticuloDescripcion', IdMarca, IdCategoria, Precio, C.Id AS 'CategoriaId', I.Id AS 'ImagenId', I.IdArticulo AS 'ImagenIdArticulo', ImagenUrl,  M.Id AS 'MarcaId' FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id  JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE a.Id = 3");
+                datosArticulo.setearConsulta("SELECT A.Id AS 'ArticuloId', Codigo, Nombre, M.Descripcion AS 'MarcaDescripcion', C.Descripcion AS 'CategoriaDescripcion', A.Descripcion AS 'ArticuloDescripcion', IdMarca, IdCategoria, Precio, C.Id AS 'CategoriaId', I.Id AS 'ImagenId', I.IdArticulo AS 'ImagenIdArticulo', ImagenUrl,  M.Id AS 'MarcaId' FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id  JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE a.Id = @Id");
+                datosArticulo.setearParametro("@Id", Id) ;
                 datosArticulo.ejecutarLectura();
 
                 while (datosArticulo.Lector.Read())
@@ -77,7 +81,7 @@ namespace negocio
                     aux.Precio = (decimal)datosArticulo.Lector["Precio"];
                     aux.Imagen.Id = (int)datosArticulo.Lector["ImagenId"];
                     aux.Imagen.IdArticulo = (int)datosArticulo.Lector["ImagenIdArticulo"];
-                    aux.Imagen.ImagenUrl = (string)datosArticulo.Lector["ImagenUrl"];
+                    aux.Imagen.ImagenUrl = (string)datosArticulo.Lector["ImagenUrl"].ToString();
 
 
                     listaArticulo.Add(aux);

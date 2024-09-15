@@ -57,6 +57,7 @@
             this.PTBimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PTBimagen.TabIndex = 1;
             this.PTBimagen.TabStop = false;
+            this.PTBimagen.RegionChanged += new System.EventHandler(this.DGVlistaTodosArticulos_SelectionChanged);
             // 
             // BTNmodificar
             // 

@@ -15,27 +15,33 @@ namespace TP2WinFormsG21A
     public partial class frmDetalle : Form
     {
         List<Articulo> listaArticulo = new List<Articulo>();
-        public frmDetalle()
+        int DatoRecibido;
+        string ImagenRecibida;
+        public frmDetalle(int Id, string imagen)
         {
             InitializeComponent();
+            DatoRecibido = Id;
+            ImagenRecibida = imagen;
         }
 
         private void frmDetalle_Load(object sender, EventArgs e)
         {
-            cargarDetalle();
+            cargarDetalle(DatoRecibido, ImagenRecibida);
         }
 
-        
-        private void cargarDetalle()
+
+
+
+        private void cargarDetalle(int Id, string imagen)
         {
             try
-            {
-                ArticuloNegocio negocio = new ArticuloNegocio();
-                listaArticulo = negocio.listarDetalle();
-                dgvDetallesArticulos.DataSource = listaArticulo;
-                cargarImagen(listaArticulo[0].Imagen.ImagenUrl);
+            {            
                 
-
+                ArticuloNegocio negocio = new ArticuloNegocio();
+                listaArticulo = negocio.listarDetalle(Id);
+                dgvDetallesArticulos.DataSource = listaArticulo;
+                cargarImagen(imagen);
+               
             }
             catch (Exception ex)
             {
