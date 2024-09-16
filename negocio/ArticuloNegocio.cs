@@ -29,7 +29,7 @@ namespace negocio
                     aux.Nombre = (string)datosArticulo.Lector["Nombre"];
                     aux.Descripcion = (string)datosArticulo.Lector["Descripcion"];                   
                     aux.Precio = (decimal)datosArticulo.Lector["Precio"];
-                    aux.Imagen = new Imagen();                   
+                    aux.Imagen = new Imagen();
                     aux.Imagen.Id = (int)datosArticulo.Lector["ArticuloId"];
                     aux.Imagen.ImagenUrl = (string)datosArticulo.Lector["ImagenUrl"];
 
@@ -76,8 +76,8 @@ namespace negocio
                     aux.Marca.NombreMarca = (string)datosArticulo.Lector["MarcaDescripcion"];
                     aux.Categoria.DescripcionCat = (string)datosArticulo.Lector["CategoriaDescripcion"];
                     aux.Descripcion = (string)datosArticulo.Lector["ArticuloDescripcion"];
-                    aux.Marca.IdMarca = (int)datosArticulo.Lector["IdMarca"];
-                    aux.Categoria.IdCat = (int)datosArticulo.Lector["IdCategoria"];
+                    aux.Marca.IdMarca = (int)datosArticulo.Lector["IdMarca"];                   
+                    aux.Categoria.IdCat = (int)datosArticulo.Lector["IdCategoria"];              
                     aux.Precio = (decimal)datosArticulo.Lector["Precio"];
                     aux.Imagen.Id = (int)datosArticulo.Lector["ImagenId"];
                     aux.Imagen.IdArticulo = (int)datosArticulo.Lector["ImagenIdArticulo"];
@@ -215,6 +215,100 @@ namespace negocio
                 datos.setearConsulta("delete from ARTICULOS where Codigo = @codigo");
                 datos.setearParametro("@codigo", codigo);
                 datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public List<Articulo> filtrar(string campo, string criterio, string filtro)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "select distinct A.Id AS 'ArticuloId', Codigo, Nombre, A.Descripcion, IdMarca, IdCategoria, Precio,(select top 1 ImagenUrl from IMAGENES where IdArticulo = A.Id)AS 'ImagenUrl'  From ARTICULOS A where ";
+                if(campo == "Id")
+                {
+                    switch (criterio)
+                    {
+                        case "Mayor a":
+                            consulta += "A.Id > " + filtro;
+                            break;
+
+                        case "Menor a":
+                            consulta += "A.Id < " + filtro;
+                            break;
+
+                        case "Igual a":
+                            consulta += "A.Id = " + filtro;
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+                else if(campo == "Precio")
+                {
+                    switch (criterio)
+                    {
+                        case "Mayor a":
+                            consulta += "Precio > " + filtro;
+                            break;
+
+                        case "Menor a":
+                            consulta += "Precio < " + filtro;
+                            break;
+
+                        case "Igual a":
+                            consulta += "Precio = " + filtro;
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "Nombre like '" + filtro + "%' ";
+                            break;
+
+                        case "Termina con":
+                            consulta += "Nombre like '%" + filtro + "' ";
+                            break;
+
+                        case "Contiene":
+                            consulta += "Nombre like '%" + filtro + "%' ";
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Id = (int)datos.Lector["ArticuloId"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Imagen = new Imagen();
+                    aux.Imagen.Id = (int)datos.Lector["ArticuloId"];
+                    aux.Imagen.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+
+                    lista.Add(aux);
+                }
+
+                return lista;
             }
             catch (Exception ex)
             {

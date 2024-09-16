@@ -28,6 +28,10 @@ namespace TP2WinFormsG21A
         private void FRMlistaTodosArticulos_Load(object sender, EventArgs e)
         {
             cargar();
+            cmbCampo.Items.Add("Id");
+            cmbCampo.Items.Add("Artículo");
+            cmbCampo.Items.Add("Precio");
+
         }
 
         private void DGVlistaTodosArticulos_SelectionChanged(object sender, EventArgs e)
@@ -102,6 +106,43 @@ namespace TP2WinFormsG21A
             
             frmDetalle ventanaDetalle = new frmDetalle(seleccionado.Id, seleccionado.Imagen.ImagenUrl);
             ventanaDetalle.ShowDialog();
+        }
+
+        private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cmbCampo.SelectedItem.ToString();
+            if(opcion == "Id" || opcion == "Precio")
+            {
+                cmbCriterio.Items.Clear();
+                cmbCriterio.Items.Add("Mayor a");
+                cmbCriterio.Items.Add("Menor a");
+                cmbCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cmbCriterio.Items.Clear();
+                cmbCriterio.Items.Add("Comienza con");
+                cmbCriterio.Items.Add("Termina con");
+                cmbCriterio.Items.Add("Contiene");
+            }
+        }
+
+        private void btnBuscarFiltro_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                string campo = cmbCampo.SelectedItem.ToString();
+                string criterio = cmbCriterio.SelectedItem.ToString();
+                string filtro = txtFiltro.Text;
+                DGVlistaTodosArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
         }
     }
 }
